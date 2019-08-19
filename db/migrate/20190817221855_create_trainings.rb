@@ -4,9 +4,9 @@ class CreateTrainings < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.string :menu
       t.text :content
-      t.string[] :purpose
-      t.sting[] :environment
-      t.string[] :target
+      t.string :purpose , array: true
+      t.string :environment , array: true
+      t.string :target , array: true
       t.string :picture
       t.string :movie
 

@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :password_digest
       t.string :remember_digest
       t.boolean :admin
-      t.stirng :reset_digest
+      t.string :reset_digest
       t.datetime :reset_sent_at
 
       t.timestamps

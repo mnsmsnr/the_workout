@@ -6,6 +6,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem 'jquery-rails'
 gem 'sassc-rails'
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 
 gem 'sqlite3',      '1.3.13'
