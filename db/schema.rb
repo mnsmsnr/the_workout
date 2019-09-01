@@ -20,19 +20,6 @@ ActiveRecord::Schema.define(version: 20190817222055) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "trainings", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "menu"
-    t.text "content"
-    t.string "purpose"
-    t.string "environment"
-    t.string "target"
-    t.string "picture"
-    t.string "movie"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -41,6 +28,19 @@ ActiveRecord::Schema.define(version: 20190817222055) do
     t.boolean "admin"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "menu"
+    t.text "content"
+    t.string "purpose"
+    t.string "environment"
+    t.string "target"
+    t.string "picture"
+    t.string "movie"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

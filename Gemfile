@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
 
+#レイアウト関連
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem 'jquery-rails'
@@ -9,9 +10,15 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 
+#DB関連
 gem 'sqlite3',      '1.3.13'
 
+#サンプルデータ関連
 gem 'faker',          '1.7.3'
+
+#ページネーション関連
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # gem 'bcrypt',         '3.1.12'
 # gem 'carrierwave',             '1.2.2'
