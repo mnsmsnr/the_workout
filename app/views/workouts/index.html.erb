@@ -1,8 +1,33 @@
+<% @workout = Workout.new unless @workout %>
+
 <h1>Training index</h1>
+
+<select class="browser-default">
+    <option value="" disabled selected>purpose</option>
+    <option value="1">ウェイトトレーニング</option>
+    <option value="2">ダイエット</option>
+    <option value="3">アクティビティ</option>
+</select>
+
+<select class="browser-default">
+    <option value="" disabled selected>environment</option>
+    <option value="1">ジム</option>
+    <option value="2">トレーニンググッズ</option>
+    <option value="3">ボディウェイト</option>
+</select>
+
+<select class="browser-default">
+    <option value="" disabled selected>target</option>
+    <option value="1">胸</option>
+    <option value="2">背中</option>
+    <option value="3">腹</option>
+    <option value="4">腕</option>
+    <option value="5">下半身</option>
+    <option value="6">心肺</option>
+</select>
+
 <%= will_paginate %>
-
-<ul class="workouts">
-  <%= render @workouts %>
-</ul>
-
+  <ul class="workouts">
+    <%= render @workouts %>
+  </ul>
 <%= will_paginate %>

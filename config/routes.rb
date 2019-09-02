@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'workout_menu' => 'workouts#show' #ワークアウト詳細
 
   root 'static_pages#home' #ホーム
+  resources :workouts
   resources :users
   end

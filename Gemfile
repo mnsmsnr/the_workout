@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
 
-#レイアウト関連
+#デザイン関連
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 gem 'jquery-rails'
