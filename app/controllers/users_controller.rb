@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   def create #新規登録実行
       @user = User.new(user_params) 
       if @user.save
-        #【!TODO;新規登録後の画面遷移(プロフィールページ)】
+        log_in @user
+        redirect_to @user
       else
         render 'new'
       end
