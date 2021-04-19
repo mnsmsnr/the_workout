@@ -23,6 +23,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 #has_secure_password関連
 gem 'bcrypt',         '3.1.12'
 
+
+
 # gem 'carrierwave',             '1.2.2'
 # gem 'mini_magick',             '4.7.0'
 # gem 'will_paginate',           '3.1.6'
@@ -41,6 +43,11 @@ group :development, :test do
 end
 
 group :development do
+
+#デバッグ関連
+gem 'ruby-debug-ide', require: false
+gem 'debase', require: false
+
 #   gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'
 #   gem 'spring',                '2.0.2'

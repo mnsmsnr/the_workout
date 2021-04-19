@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   private
 
       def user_params #新規登録用
-      params.require(:user).permit(:name, :email, :password,
-                                  :password_confirmation)
+      # TODO:passwordをユニーク判定
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
       end
 end

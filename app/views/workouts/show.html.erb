@@ -1,11 +1,16 @@
 <h1>Training show</h1>
 
-<ul> <%= @workout.menu %> </ul>
-<ul> <%= @workout.picture %> </ul> 
-<ul> <%= @workout.purpose %> </ul> 
-<ul> <%= @workout.environment %> </ul> 
-<ul> <%= @workout.target %> </ul> 
-<ul> <%= @workout.movie %> </ul>
-<ul> <%= @workout.content %></ul>
+<%= simple_form_for @workout do |f| %>
+    <li><%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
+            { confirm: '削除しますか?',
+            cancel: 'キャンセル',commit: '削除'}, title: '削除確認' %></li>
+    <h6>【menu】</h6><!--TODO:編集ボタン-->
+    <%= @workout.menu %>
+    <h6>【purpose】</h6><!--TODO:編集ボタン-->
+    <%= @workout.purpose %>
+    <h6>【environment】</h6><!--TODO:編集ボタン-->
+    <%= @workout.environment %>
+    <h6>【target】</h6><!--TODO:編集ボタン-->
+    <%= @workout.target %>
+<% end %>
 
-<ul> <%= @micropost.comment %></ul>

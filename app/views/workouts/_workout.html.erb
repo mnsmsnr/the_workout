@@ -1,7 +1,6 @@
 <li>
-  <%= link_to workout.menu, workout_menu_url %>
+  <%= link_to workout.menu, workout, method: :post %>
   <!-- <%= link_to workout.menu, '#' %> ピクチャー差し込み予定　-->
 
-  <%= workout.id %>
-  <%= workout.content %>
+  <%= workout.id %><!--【TODO:編集機能実装後削除】-->
 </li>

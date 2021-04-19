@@ -1,10 +1,10 @@
-<% provide(:title, 'User show') %> <!--フォーム幅等は一旦諦め(情報が錯綜)-->
+<% provide(:title, 'User show') %>
 <h1>User show</h1>
 <%= simple_form_for @user do |f| %>
- <h6>【NAME】</h6>
+ <h6>【NAME】</h6><!--TODO:編集ボタン-->
  <%= @user.name %>
- <h6>【EMAIL】</h6>
+ <h6>【EMAIL】</h6><!--TODO:編集ボタン-->
  <%= @user.email %>
- <h6>【PASSWORD】</h6>
- <%= @user.password_digest%>
+ <h6>【PASSWORD】</h6><!--TODO:編集ボタン-->
+ ********<!--TODO:リテラルを定義化-->
 <% end %>
