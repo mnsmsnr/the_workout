@@ -46,7 +46,6 @@ group :development do
 
 #デバッグ関連
 gem 'ruby-debug-ide', require: false
-gem 'debase', require: false
 
 #   gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'

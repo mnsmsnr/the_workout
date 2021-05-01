@@ -47,9 +47,6 @@ GEM
     builder (3.2.3)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    debase (0.2.4.1)
-      debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.9)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (1.7.3)
@@ -155,7 +152,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.12)
   bootstrap-will_paginate (= 1.0.0)
-  debase
   faker (= 1.7.3)
   jquery-rails
   listen (= 3.1.5)
