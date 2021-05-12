@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get  'workout' => 'workouts#create' #ワークアウト登録
   post 'workout_new' => 'workouts#create' #ワークアウト登録
   get  'workout_index' => 'workouts#index' #ワークアウト一覧
-  post  'workout_index' => 'workouts#index' #ワークアウト一覧
   post  'workout'=> 'workouts#show' #ワークアウト詳細  
   delete 'workout' => 'workouts#destroy' #ワークアウト削除
   resources :workouts

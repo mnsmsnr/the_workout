@@ -10,6 +10,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 
+#検索機能
+gem 'ransack'
+
 #DB関連
 gem 'sqlite3',      '1.3.13'
 
@@ -46,7 +49,7 @@ group :development do
 
 #デバッグ関連
 gem 'ruby-debug-ide', require: false
-
+gem 'debase'
 #   gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'
 #   gem 'spring',                '2.0.2'

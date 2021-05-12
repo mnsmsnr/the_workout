@@ -3,33 +3,92 @@
 <h1>Training index</h1>
 
 <p>検索</p>
-<%= form_tag(workout_index_path,:method => 'post') do %>
-  <%= text_field_tag :menu %>
-  <%= select_tag(:purpose, options_for_select([["- 未選択 -", "0"],["ウエイトトレーニング", "1"], ["ダイエット", "2"], ["アクティビティ", "3"]]),{ class: "browser-default" }) %>
-  <%= select_tag(:environment, options_for_select([["- 未選択 -", "0"],["ジム", "1"], ["トレーニンググッズ", "2"], ["ボディウェイト", "3"]]),{ class: "browser-default" }) %>
-  <%= check_box_tag (:target) %>
-  <%= label_tag (:target) %>
-  <%= submit_tag 'Search', :name => nil %>
+
+<%= search_form_for @search do |f| %>
+  <p><label>purpose</p>
+  <p>
+    <label>
+      <%= f.radio_button :purpose_cont, '', checked: true %>
+      <span>選択しない</span>
+    </label>
+    <label>
+      <%= f.radio_button :purpose_cont, '1' %>
+      <span>ウエイトトレーニング</span>
+    </label>
+    <label>
+      <%= f.radio_button :purpose_cont, '2' %>
+      <span>ダイエット</span>
+    </label>
+    <label>
+      <%= f.radio_button :purpose_cont, '3' %>
+      <span>アクティビティ</span>
+    </label>
+  </p>
+  <p><label>environment</p>
+  <p>
+    <label>
+      <%= f.radio_button :environment_cont, '', checked: true %>
+      <span>選択しない</span>
+    </label>
+    <label>
+      <%= f.radio_button :environment_cont, '1' %>
+      <span>ジム</span>
+    </label>
+    <label>
+      <%= f.radio_button :environment_cont, '2' %>
+      <span>トレーニンググッズ</span>
+    </label>
+    <label>
+      <%= f.radio_button :environment_cont, '3' %>
+      <span>ボディウエイト</span>
+    </label>
+  </p>
+  <p><label>target</p>
+  <p>
+    <label>
+      <%= f.radio_button :target_cont, '', checked: true %>
+      <span>選択しない</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '1' %>
+      <span>胸</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '2' %>
+      <span>背中</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '3' %>
+      <span>肩</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '4' %>
+      <span>上腕</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '5' %>
+      <span>前腕</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '6' %>
+      <span>体幹</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '7' %>
+      <span>大腿</span>
+    </label>
+    <label>
+      <%= f.radio_button :target_cont, '8' %>
+      <span>下腿</span>
+    </label>
+  </p>
+  <p>
+    <%= f.label :menu_cont, "メニュー名で検索" %>
+      <%= f.search_field :menu_cont %>
+  </p>
+  <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
+<ul class="workouts">
+  <%= render @products %>
+</ul>
 
-<%= simple_form_for workout_index_path,:method => 'post' do |f| %> <!--【TODO：冗長、共通化】-->
-  <%= f.input :menu %>
-  <%= f.label :purpose %>
-  <%= f.select :purpose, [["ウエイトトレーニング","1"],["ダイエット","2"],["アクティビティ","3"]], 
-        { include_blank: true, selected: 0 }, { id: "purpose", class: "browser-default" }  %>
-  <%= f.label :environment %>
-  <%= f.select :environment, [["ジム","1"],["トレーニンググッズ","2"],["ボディウェイト","3"]], 
-        { include_blank: true, selected: 0 }, { id: "environment", class: "browser-default" }  %>
-  <%= f.label :target %>
-  <%= f.select :target, [["胸","1"],["背中","2"],["腹","3"],["腕","4"],["下半身","5"],["心肺","6"]], 
-        { include_blank: true, selected: 0}, { id: "target", class: "browser-default" }  %>
-  <%= f.button :submit ,"Search" %>
-<% end %>
-
-<%if true%>
-
-<!-- 【!TODO】pagenate-->
-  <ul class="workouts">
-    <%= render @workouts %>
-  </ul>
-<%end%>
