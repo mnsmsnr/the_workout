@@ -9,7 +9,7 @@
   <p>
     <label>
       <%= f.radio_button :purpose_cont, '', checked: true %>
-      <span>選択しない</span>
+      <span>全て</span>
     </label>
     <label>
       <%= f.radio_button :purpose_cont, '1' %>
@@ -28,7 +28,7 @@
   <p>
     <label>
       <%= f.radio_button :environment_cont, '', checked: true %>
-      <span>選択しない</span>
+      <span>全て</span>
     </label>
     <label>
       <%= f.radio_button :environment_cont, '1' %>
@@ -47,7 +47,7 @@
   <p>
     <label>
       <%= f.radio_button :target_cont, '', checked: true %>
-      <span>選択しない</span>
+      <span>全て</span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '1' %>
@@ -86,9 +86,33 @@
     <%= f.label :menu_cont, "メニュー名で検索" %>
       <%= f.search_field :menu_cont %>
   </p>
+  
+  <input type="button" value="clear" onclick="clearForm()">
+
   <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
 <ul class="workouts">
   <%= render @products %>
 </ul>
+<script>
+
+// clearボタンを押した時の動作
+function clearForm() {
+	var textForm = document.getElementById("q_menu_cont");
+  var purposeButton = document.getElementById("q_purpose_cont_");
+  var environmentButton = document.getElementById("q_environment_cont_");
+  var targetButton = document.getElementById("q_target_cont_");
+  textForm.value = '';
+  purposeButton.checked = true;
+  environmentButton.checked = true;
+  targetButton.checked = true;
+}
+
+</script>
+
+<script>
+function buttonClick(){
+    alert('Click');
+}
+</script>
 

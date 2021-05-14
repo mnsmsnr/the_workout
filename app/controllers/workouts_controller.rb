@@ -1,12 +1,5 @@
 class WorkoutsController < ApplicationController
 
-  # def index #トレーニング一覧検索画面遷移・検索実行
-  #   logger.debug("log:トレーニング一覧検索画面遷移・検索押下")
-  #   # @workouts = Workout.search(params[:menu]).paginate(page: params[:page])
-  #   # @workouts = Workout.search(search_params)
-  #   @workouts = Workout.search(params[:menu])
-  # end
-
   def index
     # 検索オブジェクト
     @search = Workout.ransack(params[:q])
@@ -14,8 +7,8 @@ class WorkoutsController < ApplicationController
     @products = @search.result
   end
 
-  def search
-    @results = @q.result
+  def clear
+    @search = Model.ransack
   end
   
   def show #トレーニング詳細
