@@ -1,5 +1,5 @@
+<%= link_to '戻る', 'javascript:history.back()' %>
 <h1>Training show</h1>
-
 <%= simple_form_for @workout do |f| %>
     <li><%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
             { confirm: '削除しますか?',
