@@ -1,7 +1,19 @@
-<% provide(:title, 'login') %> <!--フォーム幅等は一旦諦め(情報が錯綜)&謎の*マーク放置-->
+<% provide(:title, 'login') %> 
 <h1>Log in</h1>
 <%= simple_form_for :sessions do |f| %>
   <%= f.input :email %>
   <%= f.input :password %>
   <%= f.button :submit ,"login"%>
 <% end %>
+
+テスト1
+<br>
+email:test3@email.co.jp
+<br>
+pass:foobar
+<br>
+テスト2
+<br>
+email:
+<br>
+pass:

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create' #ログイン
   delete 'logout' => 'sessions#destroy' #ログアウト
   get  'sighup' => 'users#new' #ユーザー新規登録
+  get  'user_edit' => 'users#edit' #ユーザー編集画面遷移
+  get  'user_update' => 'users#update' #ユーザー編集
   get  'profile' => 'users#show' #プロフィール
   get  'workout_new' => 'workouts#new' #ワークアウト登録画面遷移
   get  'workout' => 'workouts#create' #ワークアウト登録

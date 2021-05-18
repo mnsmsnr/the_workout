@@ -87,9 +87,8 @@
       <%= f.search_field :menu_cont %>
   </p>
   
+  <%= f.submit "検索" %>
   <input type="button" value="clear" onclick="clearForm()">
-
-  <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
 <ul class="workouts">
   <%= render @products %>
@@ -108,11 +107,5 @@ function clearForm() {
   targetButton.checked = true;
 }
 
-</script>
-
-<script>
-function buttonClick(){
-    alert('Click');
-}
 </script>
 

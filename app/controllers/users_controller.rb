@@ -17,10 +17,26 @@ class UsersController < ApplicationController
       end
   end
 
+  def edit #プロフィール更新画面遷移
+      @user = User.find(current_user.id)
+  end
+
+  def update #プロフィール更新
+    @user = User.find(current_user.id)
+    if @user.authenticate(params[:user][:password_before])
+      logger.debug("log:現在のパスワード認証OK")
+      @user.update(user_params)
+    end
+  end
+
   private
 
       def user_params #新規登録用
-      # TODO:passwordをユニーク判定
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        # 【!TODO】:emailをユニーク判定
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      end
+      def update_params #更新用
+        # 【!TODO】:emailをユニーク判定
+        params.require(:user).permit(:name, :email)
       end
 end
