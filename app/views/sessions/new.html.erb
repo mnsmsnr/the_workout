@@ -6,14 +6,25 @@
   <%= f.button :submit ,"login"%>
 <% end %>
 
-テスト1
-<br>
-email:test3@email.co.jp
-<br>
-pass:foobar
-<br>
-テスト2
-<br>
-email:
-<br>
-pass:
+<input id="copyID" type="text" value="test3@email.co.jp" readonly>
+<input id="copyPassword" type="text"  value="foobar" readonly>
+<input type="button" value="Emailコピー" onclick="copyToClipboard()">
+<input type="button" value="Passwordコピー" onclick="copyToClipboard2()">
+
+<script>
+// 【!TODO】コピー用javaScript一元化
+// アドレスコピー
+function copyToClipboard() {
+var copyTarget = document.getElementById("copyID");
+copyTarget.select();
+document.execCommand("Copy");
+}
+</script>
+<script>
+// パスワードコピー
+function copyToClipboard2() {
+var copyTarget = document.getElementById("copyPassword");
+copyTarget.select();
+document.execCommand("Copy");
+}
+</script>
