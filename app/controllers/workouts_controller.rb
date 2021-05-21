@@ -4,11 +4,7 @@ class WorkoutsController < ApplicationController
     # 検索オブジェクト
     @search = Workout.ransack(params[:q])
     # 検索結果
-    @products = @search.result
-  end
-
-  def clear
-    @search = Model.ransack
+    @searchResults = @search.result
   end
   
   def show #トレーニング詳細

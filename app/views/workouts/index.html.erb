@@ -91,7 +91,10 @@
   <input type="button" value="clear" onclick="clearForm()">
 <% end %>
 <ul class="workouts">
-  <%= render @products %>
+  <%= render @searchResults %>
+  <%if @searchResults.empty? %> <!--検索結果0件-->
+    <li>検索結果がありません。条件を変えて再検索してください。</li><!--【!TODO:エラーメッセージ処理】-->
+  <%end%>
 </ul>
 <script>
 
