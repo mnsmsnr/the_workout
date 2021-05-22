@@ -4,13 +4,13 @@
     <li><%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
             { confirm: '削除しますか?',
             cancel: 'キャンセル',commit: '削除'}, title: '削除確認' %></li>
-    <h6>【menu】</h6><!--TODO:編集ボタン-->
+    <h6>【menu】</h6>
     <%= @workout.menu %>
-    <h6>【purpose】</h6><!--TODO:編集ボタン-->
-    <%= @workout.purpose %>
-    <h6>【environment】</h6><!--TODO:編集ボタン-->
-    <%= @workout.environment %>
-    <h6>【target】</h6><!--TODO:編集ボタン-->
-    <%= @workout.target %>
+    <h6>【purpose】</h6>
+    <%= @purpose.name %>
+    <h6>【environment】</h6>
+    <%= @environment.name %>
+    <h6>【target】</h6>
+    <%= @target.name %>
 <% end %>
 

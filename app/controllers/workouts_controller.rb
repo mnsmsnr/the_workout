@@ -10,6 +10,9 @@ class WorkoutsController < ApplicationController
   def show #トレーニング詳細
     logger.debug("log:トレーニング詳細画面遷移")
     @workout = Workout.find_by(id: params[:format])
+    @purpose = Purpose.find_by(id: @workout.purpose)
+    @environment = Environment.find_by(id: @workout.environment)
+    @target = Target.find_by(id: @workout.target)
   end
 
   def new #新規登録画面遷移
