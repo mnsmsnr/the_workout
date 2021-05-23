@@ -12,5 +12,9 @@
     <%= @environment.name %>
     <h6>【target】</h6>
     <%= @target.name %>
+    <h6>【picture】</h6>
+    <%= image_tag @workout.image.variant(resize:'400x400').processed %>
+    <h6>【movie】</h6>
+
 <% end %>
 

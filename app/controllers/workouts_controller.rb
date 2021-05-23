@@ -40,10 +40,6 @@ class WorkoutsController < ApplicationController
     private
 
       def new_params #新規登録用
-        params.require(:workout).permit(:menu, :purpose, :environment, :target)
-      end
-
-      def search_params #検索用
-        params[:workout_index => [:menu, :purpose, :environment, :target]]
+        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image)
       end
 end

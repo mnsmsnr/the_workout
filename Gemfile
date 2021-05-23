@@ -26,6 +26,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 #has_secure_password関連(ハッシュ化)
 gem 'bcrypt',         '3.1.12'
 
+# ActiveStorage variant関連
+gem 'mini_magick', '~> 4.8'
 
 
 # gem 'carrierwave',             '1.2.2'

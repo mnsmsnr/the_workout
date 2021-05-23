@@ -11,5 +11,6 @@
   <%= f.label :target %>
   <%= f.select :target, [["胸","1"],["背中","2"],["腹","3"],["腕","4"],["下半身","5"],["心肺","6"]], 
         { include_blank: true, selected: 0}, { id: "target", class: "browser-default" }  %>
+  <%= f.file_field :image %>
   <%= f.button :submit ,"Create workout" %>
 <% end %>
