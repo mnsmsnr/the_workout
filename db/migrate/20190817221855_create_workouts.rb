@@ -7,9 +7,7 @@ class CreateWorkouts < ActiveRecord::Migration[5.1]
       t.string :purpose , array: true
       t.string :environment , array: true
       t.string :target , array: true
-      t.string :picture
-      t.string :movie
-
+      t.string :video_id
       t.timestamps
     end
   end

@@ -13,8 +13,18 @@
     <h6>【target】</h6>
     <%= @target.name %>
     <h6>【picture】</h6>
-    <%= image_tag @workout.image.variant(resize:'400x400').processed %>
-    <h6>【movie】</h6>
 
+    <% if @workout.image.attached? %>
+        <%= image_tag @workout.image.variant(resize:'400x400').processed %>
+    <% else %>
+        <%= image_tag 'none-image.jpg', size: '400x400' %>
+    <% end %>
+
+    <h6>【youtube】</h6>
+    <% if @workout.video_id.empty? %>
+        <%= image_tag 'none-image.jpg', size: '400x400' %>
+    <% else%>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <% end%>
 <% end %>
 

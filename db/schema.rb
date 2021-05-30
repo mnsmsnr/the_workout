@@ -72,8 +72,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_125346) do
     t.string "purpose"
     t.string "environment"
     t.string "target"
-    t.string "picture"
-    t.string "movie"
+    t.string "video_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

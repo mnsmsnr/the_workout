@@ -23,6 +23,9 @@ class WorkoutsController < ApplicationController
   def create #新規登録実行
     logger.debug("log:トレーニング新規登録実行")
     @workout = Workout.new(new_params) 
+    #埋め込み用URLへ加工のため動画IDのみ取得
+    url = params[:workout][:video_id]
+    @workout.video_id = url.last(11)
     if @workout.save
       redirect_to workout_index_url #【TODO!:詳細画面に飛ぶように要修正】
     else
@@ -40,6 +43,6 @@ class WorkoutsController < ApplicationController
     private
 
       def new_params #新規登録用
-        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image)
+        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image, :video_id)
       end
 end
