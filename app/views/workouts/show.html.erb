@@ -1,9 +1,12 @@
 <%= link_to '戻る', 'javascript:history.back()' %>
 <h1>Training show</h1>
 <%= simple_form_for @workout do |f| %>
-    <li><%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
-            { confirm: '削除しますか?',
-            cancel: 'キャンセル',commit: '削除'}, title: '削除確認' %></li>
+    <% if @workout.user_id == current_user.id%>  
+        <%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
+                { confirm: '削除しますか?',
+                cancel: 'キャンセル',commit: '削除'}, title: '削除確認' %>
+        <%= link_to "編集", @workout, method: :post %>
+    <% end %>
     <h6>【menu】</h6>
     <%= @workout.menu %>
     <h6>【purpose】</h6>

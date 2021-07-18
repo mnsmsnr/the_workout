@@ -1,0 +1,33 @@
+<%= link_to '戻る', 'javascript:history.back()' %>
+
+<h1>Workout edit</h1>
+<%= form_with model: @workout do |f| %>
+    <h6>【menu】</h6>
+    <%= f.text_field :menu %>
+    <h6>【purpose】</h6>
+    <%= f.select :purpose, [["ウエイトトレーニング","1"],["ダイエット","2"],["アクティビティ","3"]], 
+        { include_blank: true, selected: @workout.purpose }, { id: "purpose", class: "browser-default" }  %>
+    <h6>【environment】</h6>
+    <%= f.select :environment, [["ジム","1"],["トレーニンググッズ","2"],["ボディウェイト","3"]], 
+        { include_blank: true, selected: @workout.environment }, { id: "environment", class: "browser-default" }  %>
+    <h6>【target】</h6>
+    <%= f.select :target, [["胸","1"],["背中","2"],["腹","3"],["腕","4"],["下半身","5"],["心肺","6"]], 
+        { include_blank: true, selected: @workout.target }, { id: "target", class: "browser-default" }  %>
+    <h6>【picture】</h6>
+    <% if @workout.image.attached? %>
+        <%= image_tag @workout.image.variant(resize:'400x400').processed %>
+    <% else %>
+        <%= image_tag 'none-image.jpg', size: '400x400' %>
+    <% end %>
+    <%= f.file_field :image %>
+    <h6>【youtube】</h6>
+    <% if @workout.video_id.empty? %>
+        <%= image_tag 'none-image.jpg', size: '400x400' %>
+    <% else%>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <% end%>
+     <%= f.text_field :video_id %>
+
+    <%= f.submit "更新" %>
+<% end %>
+

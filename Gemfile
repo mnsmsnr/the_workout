@@ -8,7 +8,7 @@ gem 'material_icons'
 gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'simple_form'
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 
 #検索機能
 gem 'ransack'
@@ -28,6 +28,9 @@ gem 'bcrypt',         '3.1.12'
 
 # ActiveStorage variant関連
 gem 'mini_magick', '~> 4.8'
+
+# Vue.js関連
+gem "webpacker", '5.4.0'
 
 
 # gem 'carrierwave',             '1.2.2'
