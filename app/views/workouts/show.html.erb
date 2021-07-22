@@ -8,26 +8,24 @@
         <%= link_to "編集", @workout, method: :post %>
     <% end %>
     <h6>【menu】</h6>
-    <%= @workout.menu %>
+        <%= @workout.menu %>
     <h6>【purpose】</h6>
-    <%= @purpose.name %>
+        <%= @purpose.name %>
     <h6>【environment】</h6>
-    <%= @environment.name %>
+        <%= @environment.name %>
     <h6>【target】</h6>
-    <%= @target.name %>
+        <%= @target.name %>
     <h6>【picture】</h6>
-
-    <% if @workout.image.attached? %>
-        <%= image_tag @workout.image.variant(resize:'400x400').processed %>
-    <% else %>
-        <%= image_tag 'none-image.jpg', size: '400x400' %>
-    <% end %>
-
+        <% if @workout.image.attached? %>
+            <%= image_tag @workout.image.variant(resize:'400x400').processed %>
+        <% else %>
+            <%= image_tag 'none-image.jpg', size: '400x400' %>
+        <% end %>
     <h6>【youtube】</h6>
-    <% if @workout.video_id.empty? %>
-        <%= image_tag 'none-image.jpg', size: '400x400' %>
-    <% else%>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% end%>
+        <% if @workout.video_id.empty? %>
+            <%= image_tag 'none-image.jpg', size: '400x400' %>
+        <% else%>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end%>
 <% end %>
 

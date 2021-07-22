@@ -1,0 +1,26 @@
+.top_background {
+  width: 100%;
+  height: 0;
+  /* (画像の高さ / 画像の横幅) × 100 */
+  padding-top: 66.6666666667%;
+  background-image: image-url('top.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .button_center {
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    position: relative;
+    top: -15vh;
+  }
+}
+.harf-transparent{
+  background: rgba(67, 67, 67, 0.6);
+}
+
+.float-left{
+  float: left;
+}

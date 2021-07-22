@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav-wrapper blue">
+    <div class="nav-wrapper black">
         <a href= <%=root_path %> class="brand-logo right">THE WORKOUT</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <%if logged_in?%> <!--ログイン状態-->
@@ -15,5 +15,6 @@
                 <li><%= link_to "ログイン", login_url %></li>
             <%end%>
         </ul>
+        <!--【TODO】レスポンシブル対応-->
     </div>
 </nav>
