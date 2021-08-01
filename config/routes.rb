@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   root 'static_pages#home' #ホーム画面
   get  'login' => 'sessions#new' #ログイン画面
   post 'login' => 'sessions#create' #ログイン実行

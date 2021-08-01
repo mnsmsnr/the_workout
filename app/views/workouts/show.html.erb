@@ -1,27 +1,38 @@
-<%= link_to '戻る', 'javascript:history.back()' %>
+<br>
+<%= link_to workout_index_url ,class: "btn-small harf-transparent waves-effect waves-light " do %>
+    <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
+<% end %>
 <h1>Training show</h1>
-<%= simple_form_for @workout do |f| %>
-    <% if @workout.user_id == current_user.id%>  
-        <%= link_to "削除", workout_url(@workout.id), method: :delete ,data:
+<p class="notification">
+    <%= notice %>
+</p>
+<%= form_with model: @workout ,local: true do |f| %>
+    <% if @workout.user_id == current_user.id%>
+        <%= link_to  workout_url(@workout.id), method: :delete ,class: "waves-effect waves-light btn",data:
                 { confirm: '削除しますか?',
-                cancel: 'キャンセル',commit: '削除'}, title: '削除確認' %>
-        <%= link_to "編集", @workout, method: :post %>
+                cancel: 'キャンセル',commit: '削除'}, title: '削除確認' do %>
+            <i class="material-icons left">delete</i> <%= DELETE %>
+        <% end %>
+        <%= link_to  @workout, method: :post ,class: "waves-effect waves-light btn" do %>
+            <i class="material-icons left">edit</i> <%= EDIT %>
+        <% end %>
     <% end %>
-    <h6>【menu】</h6>
+
+    <p class = "emphasis"><%=  MENU_NAME %></p>
         <%= @workout.menu %>
-    <h6>【purpose】</h6>
+    <p class = "emphasis"><%= PURPOSE %></p>
         <%= @purpose.name %>
-    <h6>【environment】</h6>
+    <p class = "emphasis"><%= ENVIRONMENT %></p>
         <%= @environment.name %>
-    <h6>【target】</h6>
+    <p class = "emphasis"><%= TARGET %></p>
         <%= @target.name %>
-    <h6>【picture】</h6>
+    <p class = "emphasis"><%= PICTURE %></p>
         <% if @workout.image.attached? %>
             <%= image_tag @workout.image.variant(resize:'400x400').processed %>
         <% else %>
             <%= image_tag 'none-image.jpg', size: '400x400' %>
         <% end %>
-    <h6>【youtube】</h6>
+     <p class = "emphasis"><%= YOUTUBE %></p>
         <% if @workout.video_id.empty? %>
             <%= image_tag 'none-image.jpg', size: '400x400' %>
         <% else%>

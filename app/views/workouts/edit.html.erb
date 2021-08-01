@@ -1,33 +1,109 @@
-<%= link_to '戻る', 'javascript:history.back()' %>
-
+<br>
+<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light " do %>
+    <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
+<% end %>
 <h1>Workout edit</h1>
-<%= form_with model: @workout do |f| %>
-    <h6>【menu】</h6>
-    <%= f.text_field :menu %>
-    <h6>【purpose】</h6>
-    <%= f.select :purpose, [["ウエイトトレーニング","1"],["ダイエット","2"],["アクティビティ","3"]], 
-        { include_blank: true, selected: @workout.purpose }, { id: "purpose", class: "browser-default" }  %>
-    <h6>【environment】</h6>
-    <%= f.select :environment, [["ジム","1"],["トレーニンググッズ","2"],["ボディウェイト","3"]], 
-        { include_blank: true, selected: @workout.environment }, { id: "environment", class: "browser-default" }  %>
-    <h6>【target】</h6>
-    <%= f.select :target, [["胸","1"],["背中","2"],["腹","3"],["腕","4"],["下半身","5"],["心肺","6"]], 
-        { include_blank: true, selected: @workout.target }, { id: "target", class: "browser-default" }  %>
-    <h6>【picture】</h6>
-    <% if @workout.image.attached? %>
-        <%= image_tag @workout.image.variant(resize:'400x400').processed %>
-    <% else %>
-        <%= image_tag 'none-image.jpg', size: '400x400' %>
-    <% end %>
-    <%= f.file_field :image %>
-    <h6>【youtube】</h6>
-    <% if @workout.video_id.empty? %>
-        <%= image_tag 'none-image.jpg', size: '400x400' %>
-    <% else%>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% end%>
-     <%= f.text_field :video_id %>
-
-    <%= f.submit "更新" %>
+<%= form_with model: @workout ,local: true do |f| %>
+        <%= f.hidden_field :id %>
+    <p class = "emphasis"><%=  MENU_NAME %></p>
+        <%= f.text_field :menu %>
+    <p class = "emphasis"><%= PURPOSE %></p>
+    <p>
+        <label>
+        <%= f.radio_button :purpose, '' %>
+        <span><%= ALL %></span>
+        </label>
+        <br>
+        <label>
+        <%= f.radio_button :purpose, '1' %>
+        <span><%= PURPOSE_1 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :purpose, '2' %>
+        <span><%= PURPOSE_2 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :purpose, '3' %>
+        <span><%= PURPOSE_3 %></span>
+        </label>
+    </p>
+    <p class = "emphasis"><%= ENVIRONMENT %></p>
+    <p>
+        <label>
+        <%= f.radio_button :environment, '', checked: true %>
+        <span><%= ALL %></span>
+        </label>
+        <br>
+        <label>
+        <%= f.radio_button :environment, '1' %>
+        <span><%= ENVIRONMENT_1 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :environment, '2' %>
+        <span><%= ENVIRONMENT_2 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :environment, '3' %>
+        <span><%= ENVIRONMENT_3 %></span>
+        </label>
+    </p>
+    <p class = "emphasis"><%= TARGET %></p>
+    <p>
+        <label>
+        <%= f.radio_button :target, '', checked: true %>
+        <span><%= ALL %></span>
+        </label>
+        <br>
+        <label>
+        <%= f.radio_button :target, '1' %>
+        <span><%= TARGET_1 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '2' %>
+        <span><%= TARGET_2 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '3' %>
+        <span><%= TARGET_3 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '4' %>
+        <span><%= TARGET_4 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '5' %>
+        <span><%= TARGET_5 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '6' %>
+        <span><%= TARGET_6 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '7' %>
+        <span><%= TARGET_7 %></span>
+        </label>
+        <label>
+        <%= f.radio_button :target, '8' %>
+        <span><%= TARGET_8 %></span>
+        </label>
+    </p>
+    <p class = "emphasis"><%= PICTURE %></p>
+        <% if @workout.image.attached? %>
+            <%= image_tag @workout.image.variant(resize:'400x400').processed %>
+        <% else %>
+            <%= image_tag 'none-image.jpg', size: '400x400' %>
+        <% end %>
+        <br>
+        <%= f.file_field :image %>
+    <p class = "emphasis"><%= YOUTUBE %></p>
+        <% if @workout.video_id.empty? %>
+            <%= image_tag 'none-image.jpg', size: '400x400' %>
+        <% else%>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end%>
+        <%= f.text_field :video_id %>
+    <button type="submit" class="waves-effect waves-light btn">
+        <i class="material-icons left">update</i><%= UPDATE %>
+    </button>
 <% end %>
 

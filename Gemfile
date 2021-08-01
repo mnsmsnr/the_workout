@@ -4,6 +4,7 @@ gem 'rails',        '5.2.0'
 
 #デザイン関連
 gem 'materialize-sass', '~> 1.0.0'
+gem 'jquery-rails'
 gem 'material_icons' 
 gem 'jquery-rails'
 gem 'sassc-rails'
@@ -14,7 +15,7 @@ gem 'simple_form'
 gem 'ransack'
 
 #DB関連
-gem 'sqlite3',      '1.3.13'
+gem 'sqlite3', '~> 1.3.6'
 
 #サンプルデータ関連
 gem 'faker',          '1.7.3'

@@ -1,5 +1,13 @@
-<li>
-  <%= link_to workout.menu, workout, method: :get %>
 
-  <%= workout.id %><!--【TODO:編集機能実装後削除】-->
-</li>
+    <div class="col">
+      <div class="card">
+        <div class="card-image trim">
+          <% if workout.image.attached? %>
+            <%= link_to image_tag(workout.image.variant(combine_options:{gravity: :center, resize:"300x300^", crop:"300x300+0+0"}).processed), workout, method: :get %>
+          <% else %>
+            <%= link_to image_tag('none-image.jpg', class: "trim"), workout, method: :get %>
+          <%end%>
+          <%= link_to workout.menu ,workout, method: :get ,class: "card-title card_title_bg"%>
+        </div>
+      </div>
+    </div>

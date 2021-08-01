@@ -2,113 +2,113 @@
 
 <h1>Training index</h1>
 
-<p>検索</p>
-
 <%= search_form_for @search do |f| %>
-  <p><label>purpose</p>
-  <p>
+  <p class = "emphasis"><%= PURPOSE %></p>
+
     <label>
       <%= f.radio_button :purpose_cont, '', checked: true %>
-      <span>全て</span>
+      <span><%= ALL %></span>
     </label>
+    <br>
     <label>
       <%= f.radio_button :purpose_cont, '1' %>
-      <span>ウエイトトレーニング</span>
+      <span><%= PURPOSE_1 %></span>
     </label>
     <label>
       <%= f.radio_button :purpose_cont, '2' %>
-      <span>ダイエット</span>
+      <span><%= PURPOSE_2 %></span>
     </label>
     <label>
       <%= f.radio_button :purpose_cont, '3' %>
-      <span>アクティビティ</span>
+      <span><%= PURPOSE_3 %></span>
     </label>
-  </p>
-  <p><label>environment</p>
-  <p>
+  <p class = "emphasis"><%= ENVIRONMENT %></p>
     <label>
       <%= f.radio_button :environment_cont, '', checked: true %>
-      <span>全て</span>
+      <span><%= ALL %></span>
     </label>
+    <br>
     <label>
       <%= f.radio_button :environment_cont, '1' %>
-      <span>ジム</span>
+      <span><%= ENVIRONMENT_1 %></span>
     </label>
     <label>
       <%= f.radio_button :environment_cont, '2' %>
-      <span>トレーニンググッズ</span>
+      <span><%= ENVIRONMENT_2 %></span>
     </label>
     <label>
       <%= f.radio_button :environment_cont, '3' %>
-      <span>ボディウエイト</span>
+      <span><%= ENVIRONMENT_3 %></span>
     </label>
-  </p>
-  <p><label>target</p>
-  <p>
+  <p class = "emphasis"><%= TARGET %></p>
     <label>
       <%= f.radio_button :target_cont, '', checked: true %>
-      <span>全て</span>
+      <span><%= ALL %></span>
     </label>
+    <br>
     <label>
       <%= f.radio_button :target_cont, '1' %>
-      <span>胸</span>
+      <span><%= TARGET_1 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '2' %>
-      <span>背中</span>
+      <span><%= TARGET_2 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '3' %>
-      <span>肩</span>
+      <span><%= TARGET_3 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '4' %>
-      <span>上腕</span>
+      <span><%= TARGET_4 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '5' %>
-      <span>前腕</span>
+      <span><%= TARGET_5 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '6' %>
-      <span>体幹</span>
+      <span><%= TARGET_6 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '7' %>
-      <span>大腿</span>
+      <span><%= TARGET_7 %></span>
     </label>
     <label>
       <%= f.radio_button :target_cont, '8' %>
-      <span>下腿</span>
+      <span><%= TARGET_8 %></span>
     </label>
-  </p>
-  <p>
-    <%= f.label :menu_cont, "メニュー名で検索" %>
-      <%= f.search_field :menu_cont %>
-  </p>
+  <p class = "emphasis"><%=  MENU_NAME %></p>
+  <%= f.search_field :menu_cont %>
   
-  <%= f.submit "検索" %>
-  <input type="button" value="clear" onclick="clearForm()">
+  <button type="submit" class="waves-effect waves-light btn">
+    <i class="material-icons left">search</i><%= SEARCH %>
+  </button>
+  <button onclick="clearForm()" class="waves-effect waves-light btn">
+    <i class="material-icons left">clear</i><%= CLEAR %>
+  </button>
 <% end %>
+
+<div class="row">
 <ul class="workouts">
   <%= render @searchResults %>
   <%if @searchResults.empty? %> <!--検索結果0件-->
-    <li>検索結果がありません。条件を変えて再検索してください。</li><!--【!TODO:エラーメッセージ処理】-->
+    <li><%= SEARCH_EMPTY %></li>
   <%end%>
 </ul>
+  </div>
+
 <script>
-
-// clearボタンを押した時の動作
-function clearForm() {
-	var textForm = document.getElementById("q_menu_cont");
-  var purposeButton = document.getElementById("q_purpose_cont_");
-  var environmentButton = document.getElementById("q_environment_cont_");
-  var targetButton = document.getElementById("q_target_cont_");
-  textForm.value = '';
-  purposeButton.checked = true;
-  environmentButton.checked = true;
-  targetButton.checked = true;
-}
-
+  // clearボタンを押した時の動作
+  function clearForm() {
+    var textForm = document.getElementById("q_menu_cont");
+    var purposeButton = document.getElementById("q_purpose_cont_");
+    var environmentButton = document.getElementById("q_environment_cont_");
+    var targetButton = document.getElementById("q_target_cont_");
+    textForm.value = '';
+    purposeButton.checked = true;
+    environmentButton.checked = true;
+    targetButton.checked = true;
+  }
 </script>
 

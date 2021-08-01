@@ -1,7 +1,7 @@
 <% provide(:title, 'User edit') %>
 <%= link_to '戻る', 'javascript:history.back()' %>
 <h1>User edit</h1>
-<%= form_with model: @user do |f| %>
+<%= form_with model: @user　,local: true do |f| %>
     <h6>【NAME】</h6>
     <%= f.text_field :name %>
     <h6>【EMAIL】</h6>

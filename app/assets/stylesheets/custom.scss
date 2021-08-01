@@ -17,10 +17,39 @@
     top: -15vh;
   }
 }
+
 .harf-transparent{
-  background: rgba(67, 67, 67, 0.6);
+  background: rgba(77, 182, 172, 0.7);
 }
 
 .float-left{
   float: left;
 }
+
+.header_bg{
+  background: rgba(77, 182, 172, 1);
+}
+
+.card_title_bg{
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.emphasis {
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  background: rgba(77, 182, 172, 0.5);
+}
+
+.trim{
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+
+}
+
+// フラッシュメッセージのデザイン
+.notification {
+  color: rgba(0, 0, 255, 0.7);
+  font-size: 2rem;
+}
+
