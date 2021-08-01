@@ -1,11 +1,14 @@
 <% provide(:title, 'login') %> 
 <h1>Log in</h1>
 <%= simple_form_for :sessions do |f| %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.button :submit ,"login"%>
+  <p class = "emphasis"><%= EMAIL %></p>
+    <%= f.input :email ,label:false %>
+  <p class = "emphasis"><%= PASSWORD %></p>
+    <%= f.input :password ,label:false %>
+  <%= f.button :submit , LOGIN %>
 <% end %>
 
+<!--動作確認用-->
 <input id="copyID" type="text" value="example@sample.co.jp" readonly>
 <input id="copyPassword" type="text"  value="password" readonly>
 <input type="button" value="Emailコピー" onclick="copyToClipboard()">

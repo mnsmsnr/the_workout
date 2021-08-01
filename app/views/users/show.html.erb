@@ -1,11 +1,16 @@
 <% provide(:title, 'User show') %>
 <h1>User show</h1>
+<p class="notification">
+    <%= notice %>
+</p>
+<%= link_to user_edit_path ,class: "waves-effect waves-light btn" do %>
+            <i class="material-icons left">edit</i> <%= EDIT %>
+        <% end %>
 <%= form_with do |f| %>
- <h6>【NAME】</h6>
- <%= @user.name %>
- <h6>【EMAIL】</h6>
- <%= @user.email %>
- <h6>【PASSWORD】</h6>
- ********<!--TODO:リテラルを定義化-->
+    <p class = "emphasis"><%= NAME %></p>
+        <%= @user.name %>
+    <p class = "emphasis"><%= EMAIL %></p>
+        <%= @user.email %>
+    <p class = "emphasis"><%= EMAIL %></p>
+        <%= HIDDEN %>
 <% end %>
-<%= link_to "編集", user_edit_path  %>

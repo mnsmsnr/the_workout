@@ -26,6 +26,9 @@ class UsersController < ApplicationController
     if @user.authenticate(params[:user][:password_before])
       logger.debug("log:現在のパスワード認証OK")
       @user.update(user_params)
+      redirect_to @user ,fallback_location: root_path, notice: 'Update completed!'
+    else
+      logger.debug("log:現在のパスワード認証NG")
     end
   end
 

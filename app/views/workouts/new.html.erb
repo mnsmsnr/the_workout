@@ -1,10 +1,8 @@
 <h1>Training new</h1>
 
 <%= form_with model: @workout,local: true do |f| %>
-  <p class = "emphasis">
-    <%=  MENU_NAME %>
-  </p>
-  <%= f.text_field :menu %>
+  <p class = "emphasis"><%=  MENU_NAME %></p>
+    <%= f.text_field :menu %>
   <p class = "emphasis"><%= PURPOSE %></p>
   <p>
     <label>

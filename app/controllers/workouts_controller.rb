@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
   # 検索オブジェク(条件保持用)
   @@search　= nil;
-  # 
+  # 検索画面遷移元判定
   @@show_backlog = false;
 
   def index #検索画面遷移・検索実行
@@ -20,9 +20,6 @@ class WorkoutsController < ApplicationController
       @searchResults = @@search.result
       @@show_backlog = false
     end
-    
-    
-
   end
   
   def show #トレーニング詳細画面遷移
