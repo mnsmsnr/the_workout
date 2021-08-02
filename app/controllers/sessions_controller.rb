@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to root_url
     else #ログインエラー
-      flash.now[:danger] = 'Invalid email/password combination' #flash未対応【!TODO:toastrで対応したい】
-      render 'new'
+      redirect_to login_url ,fallback_location: root_path, notice: LOGIN_AUTHENTICATION
     end
   end
 

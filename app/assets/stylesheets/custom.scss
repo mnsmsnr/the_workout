@@ -48,9 +48,29 @@
 
 }
 
-// フラッシュメッセージのデザイン
+// メッセージのデザイン
 .notification {
-  color: rgba(0, 0, 255, 0.7);
   font-size: 2rem;
+  color: rgba(0, 0, 255, 0.7);
+  .success{
+    color: rgba(0, 0, 255, 0.7);
+  }
+  .error{
+    color: rgba(255, 0, 0, 0.7);
+  }
 }
 
+// フォームエラー
+.simple_form {
+.form-group-invalid {
+  label {
+      color: red;
+  }
+  .form-control {
+      border: 1px solid red;
+  }        
+  .invalid-feedback {
+      color: red;
+  }
+}
+}

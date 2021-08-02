@@ -1,5 +1,8 @@
 <% provide(:title, 'login') %> 
 <h1>Log in</h1>
+<p class="notification">
+    <span class = "error"><%= notice %></span>
+</p>
 <%= simple_form_for :sessions do |f| %>
   <p class = "emphasis"><%= EMAIL %></p>
     <%= f.input :email ,label:false %>

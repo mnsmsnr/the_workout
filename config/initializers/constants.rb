@@ -15,6 +15,7 @@ OLD_PASSWORD = 'OLD_PASSWORD'
 NEW_PASSWORD = 'NEW_PASSWORD'
 NEW_PASSWORD_CONFIRMATION = 'NEW_PASSWORD_CONFIRMATION'
 HIDDEN = '********'
+COMPLETED = 'Update completed!' #ワーク更新共通
 
 #WORK関連
 ALL = '選択しない'
@@ -45,4 +46,8 @@ BACK = 'BACK'
 DELETE = 'DELETE'
 EDIT = 'EDIT' #USER共通
 UPDATE = 'UPDATE'
+
+#エラー
 SEARCH_EMPTY = '検索結果がありません。条件を変えて再検索してください。'
+LOGIN_AUTHENTICATION = 'ユーザー名もしくはパスワードが無効です '
+PASSWORD_UPDATE_AUTHENTICATION = '現在のパスワードが無効です'

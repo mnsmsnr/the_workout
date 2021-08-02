@@ -39,7 +39,6 @@
 User.create!(name:  "TestUser",
     email: "example@sample.co.jp",
     password:              "password",
-    password_confirmation: "password",
 )
 
 #マスタ

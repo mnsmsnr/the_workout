@@ -1,14 +1,13 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 <%= simple_form_for @user do |f| %>
-  <%= render 'shared/error_messages' %>
   <p class = "emphasis"><%= NAME %></p>
-    <%= f.input :name ,label:false %>
+    <%= f.input :name ,placeholder: "UserName" ,label:false %>
   <p class = "emphasis"><%= EMAIL %></p>
-    <%= f.input :email ,label:false %>
+    <%= f.input :email ,placeholder: "mail-address@sample.jp" ,label:false %>
   <p class = "emphasis"><%= PASSWORD %></p>
-    <%= f.input :password ,label:false %>
+    <%= f.input :password ,placeholder: "password2021" ,label:false %>
   <p class = "emphasis"><%= PASSWORD_CONFIRMATION %></p>
-    <%= f.input :password_confirmation ,label:false %>
-    <%= f.button :submit , SIGN_UP %>
+    <%= f.input :password_confirmation ,placeholder: "password2021" ,label:false %>
+  <%= f.button :submit , SIGN_UP %>
 <% end %>

@@ -1,8 +1,8 @@
 <h1>Training new</h1>
 
-<%= form_with model: @workout,local: true do |f| %>
-  <p class = "emphasis"><%=  MENU_NAME %></p>
-    <%= f.text_field :menu %>
+<%= simple_form_for @workout do |f| %>
+  <p class = "emphasis"><%= MENU_NAME %></p>
+     <%= f.input :menu ,placeholder: "ダンベル ショルダープレス " ,label:false %>
   <p class = "emphasis"><%= PURPOSE %></p>
   <p>
     <label>
@@ -71,7 +71,7 @@
   <p class = "emphasis"><%= PICTURE %></p>
       <%= f.file_field :image %>
   <p class = "emphasis"><%= YOUTUBE %></p>
-      <%= f.text_field :video_id %>
+      <%= f.text_field :video_id ,placeholder: "https://www.youtube.com/watch?v=_Rbmhns0CxU" %>
   <button type="submit" class="waves-effect waves-light btn">
     <i class="material-icons left">add</i><%= CREATE %>
   </button>

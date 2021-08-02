@@ -65,11 +65,17 @@ class WorkoutsController < ApplicationController
   def update #ワークアウト更新
     logger.debug("log:ワークアウト更新実行")
     @workout = Workout.find_by(id: params.require(:workout)[:id])
-    @workout.update(new_update_params)
-    #埋め込み用URLへ加工のため動画IDのみ取得
-    url = params[:workout][:video_id]
-    @workout.update(video_id: url.last(11))
-    redirect_to @workout ,fallback_location: root_path, notice: 'Update completed!'
+    if @workout.update(new_update_params)
+      logger.debug("log:varid-OK")
+      #埋め込み用URLへ加工のため動画IDのみ取得
+      url = params[:workout][:video_id]
+      @workout.update(video_id: url.last(11))
+      redirect_to @workout ,fallback_location: root_path, notice: COMPLETED
+    else
+      logger.debug("log:varid-NG")
+      render 'edit'
+    end
+    
   end
 
     private

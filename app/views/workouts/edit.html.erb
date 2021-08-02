@@ -3,10 +3,10 @@
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
 <% end %>
 <h1>Workout edit</h1>
-<%= form_with model: @workout ,local: true do |f| %>
-        <%= f.hidden_field :id %>
+<%= simple_form_for @workout do |f| %>
+    <%= f.hidden_field :id %>
     <p class = "emphasis"><%=  MENU_NAME %></p>
-        <%= f.text_field :menu %>
+        <%= f.input :menu ,placeholder: "ダンベル ショルダープレス " ,label:false %>
     <p class = "emphasis"><%= PURPOSE %></p>
     <p>
         <label>
