@@ -39,9 +39,9 @@ class WorkoutsController < ApplicationController
 
   def create #新規登録実行
     logger.debug("log:トレーニング新規登録実行")
-    @workout = Workout.new(new_update_params) 
+    @workout = Workout.new(workout_params) 
     @workout.user_id = current_user.id
-    #埋め込み用URLへ加工のため動画IDのみ取得
+    # 埋め込み用URLへ加工のため動画IDのみ取得
     url = params[:workout][:video_id]
     @workout.video_id = url.last(11)
     if @workout.save
@@ -65,7 +65,7 @@ class WorkoutsController < ApplicationController
   def update #ワークアウト更新
     logger.debug("log:ワークアウト更新実行")
     @workout = Workout.find_by(id: params.require(:workout)[:id])
-    if @workout.update(new_update_params)
+    if @workout.update(workout_params)
       logger.debug("log:varid-OK")
       #埋め込み用URLへ加工のため動画IDのみ取得
       url = params[:workout][:video_id]
@@ -80,7 +80,7 @@ class WorkoutsController < ApplicationController
 
     private
 
-      def new_update_params 
+      def workout_params 
         params.require(:workout).permit(:menu, :purpose, :environment, :target, :image, :video_id)
       end
 end

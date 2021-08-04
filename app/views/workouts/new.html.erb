@@ -69,7 +69,12 @@
     </label>
   </p>
   <p class = "emphasis"><%= PICTURE %></p>
-      <%= f.file_field :image %>
+    <% @workout.errors.full_messages.each do |msg| %>
+      <div >
+        <span style="color:red"><%= msg %></span>
+      </div>
+    <% end %>
+    <%= f.file_field :image %>
   <p class = "emphasis"><%= YOUTUBE %></p>
       <%= f.text_field :video_id ,placeholder: "https://www.youtube.com/watch?v=_Rbmhns0CxU" %>
   <button type="submit" class="waves-effect waves-light btn">
