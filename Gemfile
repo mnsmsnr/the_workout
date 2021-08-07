@@ -15,7 +15,9 @@ gem 'simple_form'
 gem 'ransack'
 
 #DB関連
-gem 'sqlite3', '~> 1.3.6'
+# gem 'sqlite3', '~> 1.3.6'
+gem 'mysql2'
+gem 'dotenv-rails'
 
 #サンプルデータ関連
 gem 'faker',          '1.7.3'
