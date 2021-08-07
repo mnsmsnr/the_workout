@@ -35,6 +35,9 @@ gem 'mini_magick', '~> 4.8'
 # Vue.js関連
 gem "webpacker", '5.4.0'
 
+# app server
+gem 'unicorn'
+
 
 # gem 'carrierwave',             '1.2.2'
 # gem 'mini_magick',             '4.7.0'
