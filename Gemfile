@@ -33,7 +33,7 @@ gem 'bcrypt',         '3.1.12'
 gem 'mini_magick', '~> 4.8'
 
 # Vue.js関連
-gem "webpacker", '5.4.0'
+gem "webpacker"
 
 # app server
 gem 'unicorn'
