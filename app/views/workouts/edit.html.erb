@@ -1,5 +1,5 @@
 <br>
-<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light " do %>
+<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light black" do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
 <% end %>
 <h1>Workout edit</h1>
@@ -102,7 +102,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% end%>
         <%= f.text_field :video_id %>
-    <button type="submit" class="waves-effect waves-light btn">
+    <button type="submit" class="waves-effect waves-light btn black">
         <i class="material-icons left">update</i><%= UPDATE %>
     </button>
 <% end %>

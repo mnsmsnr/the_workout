@@ -5,7 +5,6 @@ class WorkoutsController < ApplicationController
   @@show_backlog = false;
 
   def index #検索画面遷移・検索実行
-
     # 初回遷移・検索実行
     if @@show_backlog == false
       # 検索オブジェクト

@@ -1,24 +1,23 @@
-.top_background {
-  width: 100%;
-  height: 0;
-  padding-top: 66.6666666667%;
-  background-image: image-url('top.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-
-  .button_center {
+.top_video{
+  height: 80vh;
+  z-index: 1;
+  video{
     width: 100%;
-    height: 50vh;
-    text-align: center;
-    position: relative;
-    top: -15vh;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
+.button_center {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  top: -20vh;
+}
+
 .harf-transparent{
-  background: rgba(77, 182, 172, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .float-left{
@@ -26,7 +25,7 @@
 }
 
 .header_bg{
-  background: rgba(77, 182, 172, 1);
+  background: rgba(0, 0, 0, 1);
 }
 
 .card_title_bg{
@@ -36,8 +35,8 @@
 //ラベル
 .emphasis {
   font-weight: 700;
-  color: rgb(0, 0, 0);
-  background: rgba(77, 182, 172, 0.5);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 .trim{
@@ -61,15 +60,81 @@
 
 // フォームエラー
 .simple_form {
-.form-group-invalid {
-  label {
-      color: red;
-  }
-  .form-control {
-      border: 1px solid red;
-  }        
-  .invalid-feedback {
-      color: red;
+  .form-group-invalid {
+    label {
+        color: red;
+    }
+    .form-control {
+        border: 1px solid red;
+    }        
+    .invalid-feedback {
+        color: red;
+    }
   }
 }
+
+// 吹き出し
+.balloon5 {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -90px;
+  width: 80px;
+}
+.balloon5 .faceicon img{
+  width: 100%;
+  height: auto;
+  border: solid 3px #d7ebfe;
+  border-radius: 50%;
+}
+.balloon5 .chatting {
+  width: 100%;
+}
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #d7ebfe;
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+.flex{
+  display: flex;
+}
+.flex-wrap{
+  flex-wrap        : wrap;
+}
+
+.top-menu {
+  height: 65vh;
+  object-fit: cover;
+}
+
+.top_picture{
+  //擬似的に透過画像風に
+  background-image: url('top.jpg');
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+  width: 100%;
+}
+
+.radio{
+  background-color:rgb(255, 4, 4);
 }

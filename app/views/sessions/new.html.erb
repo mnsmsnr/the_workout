@@ -1,36 +1,56 @@
 <% provide(:title, 'login') %> 
 <h1>Log in</h1>
+
+<!--テストログイン用-->
+<div class="balloon5">
+  <div class="faceicon">
+    <%= image_tag 'megane.jpeg' %>
+  </div>
+  <div class="chatting">
+    <div class="says flex-wrap">
+    <p>動作確認用のログインIDとパスワードはこちらからコピー出来ます</p>
+      <div class="flex">
+        <input id="copyID" value="example@sample.co.jp" readonly>
+        <a class="btn-floating waves-effect waves-light blue " value="Emailコピー" onclick="copyToClipboard()">
+          <i class="material-icons">content_copy</i>
+        </a>
+      </div>
+      <div class="flex">
+        <input id="copyPassword"  value="password2021" readonly>
+        <a class="btn-floating waves-effect waves-light blue " value="Passwordコピー" onclick="copyToClipboard2()">
+          <i class="material-icons">content_copy</i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p class="notification">
     <span class = "error"><%= notice %></span>
 </p>
 <%= simple_form_for :sessions do |f| %>
-  <p class = "emphasis"><%= EMAIL %></p>
-    <%= f.input :email ,label:false %>
+  <p class = "emphasis" ,id = "email"><%= EMAIL %></p>
+    <%= f.input :email ,placeholder: "example@sample.co.jp" ,label:false %>
   <p class = "emphasis"><%= PASSWORD %></p>
-    <%= f.input :password ,label:false %>
-  <%= f.button :submit , LOGIN %>
+    <%= f.input :password ,placeholder: "password2021" ,label:false %>
+  <%= f.button :submit , LOGIN ,:class =>'black' %>
 <% end %>
-
-<!--動作確認用-->
-<input id="copyID" type="text" value="example@sample.co.jp" readonly>
-<input id="copyPassword" type="text"  value="password" readonly>
-<input type="button" value="Emailコピー" onclick="copyToClipboard()">
-<input type="button" value="Passwordコピー" onclick="copyToClipboard2()">
 
 <script>
 // 【!TODO】コピー用javaScript一元化
 // アドレスコピー
 function copyToClipboard() {
-var copyTarget = document.getElementById("copyID");
-copyTarget.select();
+var copyArea = document.getElementById("copyID");
+copyArea.select();
 document.execCommand("Copy");
+document.getSelection().empty(copyArea);
 }
 </script>
 <script>
 // パスワードコピー
 function copyToClipboard2() {
-var copyTarget = document.getElementById("copyPassword");
-copyTarget.select();
+var copyArea = document.getElementById("copyPassword");
+copyArea.select();
 document.execCommand("Copy");
 }
 </script>

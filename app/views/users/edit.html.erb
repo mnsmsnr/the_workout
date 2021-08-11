@@ -1,5 +1,5 @@
 <br>
-<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light " do %>
+<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light black " do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
 <% end %>
 <h1>User edit</h1>
@@ -19,7 +19,7 @@
         <%= f.input :password ,label:false %>
     <p class = "emphasis"><%= NEW_PASSWORD_CONFIRMATION %></p>
         <%= f.input :password_confirmation ,label:false %>
-    <button type="submit" class="waves-effect waves-light btn">
+    <button type="submit" class="waves-effect waves-light btn black">
         <i class="material-icons left">update</i><%= UPDATE %>
     </button>
 <% end %>

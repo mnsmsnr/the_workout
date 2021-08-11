@@ -17,6 +17,10 @@ NEW_PASSWORD_CONFIRMATION = 'NEW_PASSWORD_CONFIRMATION'
 HIDDEN = '********'
 COMPLETED = 'Update completed!' #ワーク更新共通
 
+#TOPメニュー
+TRANING_ADD = 'Traning Add'
+TRANING_SEARCH = 'Traning search'
+
 #WORK関連
 ALL = '選択しない'
 PURPOSE = 'トレーニング種別'
