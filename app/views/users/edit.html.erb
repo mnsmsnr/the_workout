@@ -1,3 +1,4 @@
+<% content_for(:html_title) { @user.name } %>
 <br>
 <%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light black " do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
@@ -11,14 +12,14 @@
         <%= f.input :password_before ,label:false %>
     <br>
     <p class = "emphasis"><%= NAME %></p>
-        <%= f.input :name ,placeholder: "UserName" ,label:false %>
+        <%= f.input :name ,placeholder: NAME_PH ,label:false %>
     <p class = "emphasis"><%= EMAIL %></p>
-        <%= f.input :email ,placeholder: "mail-address@sample.jp" ,label:false %>
+        <%= f.input :email ,placeholder: EMAIL_PH ,label:false %>
 
     <p class = "emphasis"><%= NEW_PASSWORD %></p>
-        <%= f.input :password ,label:false %>
+        <%= f.input :password ,label:false ,placeholder: PASSWORD_PH %>
     <p class = "emphasis"><%= NEW_PASSWORD_CONFIRMATION %></p>
-        <%= f.input :password_confirmation ,label:false %>
+        <%= f.input :password_confirmation ,label:false ,placeholder: PASSWORD_PH %>
     <button type="submit" class="waves-effect waves-light btn black">
         <i class="material-icons left">update</i><%= UPDATE %>
     </button>

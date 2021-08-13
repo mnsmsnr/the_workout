@@ -1,83 +1,53 @@
+<% content_for(:html_title) { INDEX_TITLE } %>
+<br>
 <% @workout = Workout.new unless @workout %>
-
 <h1>Training index</h1>
-
 <%= search_form_for @search do |f| %>
   <p class = "emphasis"><%= PURPOSE %></p>
-
+  <% purposes = [ALL,PURPOSE_1,PURPOSE_2,PURPOSE_3] %>
+  <% for i in [*0..3] %>
     <label>
-      <%= f.radio_button :purpose_cont, '', checked: true %>
-      <span><%= ALL %></span>
+        <% if i == 0 %>
+          <%= f.radio_button :purpose_cont, '',:class =>'radiotest' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :purpose_cont, i.to_s %>
+        <% end %>
+        <span><%= purposes[i] %></span>
     </label>
-    <br>
-    <label>
-      <%= f.radio_button :purpose_cont, '1' %>
-      <span><%= PURPOSE_1 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :purpose_cont, '2' %>
-      <span><%= PURPOSE_2 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :purpose_cont, '3' %>
-      <span><%= PURPOSE_3 %></span>
-    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
   <p class = "emphasis"><%= ENVIRONMENT %></p>
-    <label>
-      <%= f.radio_button :environment_cont, '', checked: true %>
-      <span><%= ALL %></span>
+  <% environments = [ALL,ENVIRONMENT_1,ENVIRONMENT_2,ENVIRONMENT_3] %>
+  <% for i in [*0..3] %>
+    <label >
+        <% if i == 0 %>
+          <%= f.radio_button :environment_cont, '' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :environment_cont, i.to_s %>
+        <% end %>
+        <span><%= environments[i] %></span>
     </label>
-    <br>
-    <label>
-      <%= f.radio_button :environment_cont, '1' %>
-      <span><%= ENVIRONMENT_1 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :environment_cont, '2' %>
-      <span><%= ENVIRONMENT_2 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :environment_cont, '3' %>
-      <span><%= ENVIRONMENT_3 %></span>
-    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
   <p class = "emphasis"><%= TARGET %></p>
+  <% targets = [ALL,TARGET_1,TARGET_2,TARGET_3,TARGET_4,TARGET_5,TARGET_6,TARGET_7,TARGET_8] %>
+  <% for i in [*0..8] %>
     <label>
-      <%= f.radio_button :target_cont, '', checked: true %>
-      <span><%= ALL %></span>
+        <% if i == 0 %>
+          <%= f.radio_button :target_cont, '' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :target_cont, i.to_s %>
+        <% end %>
+        <span><%= targets[i] %></span>
     </label>
-    <br>
-    <label>
-      <%= f.radio_button :target_cont, '1' %>
-      <span><%= TARGET_1 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '2' %>
-      <span><%= TARGET_2 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '3' %>
-      <span><%= TARGET_3 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '4' %>
-      <span><%= TARGET_4 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '5' %>
-      <span><%= TARGET_5 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '6' %>
-      <span><%= TARGET_6 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '7' %>
-      <span><%= TARGET_7 %></span>
-    </label>
-    <label>
-      <%= f.radio_button :target_cont, '8' %>
-      <span><%= TARGET_8 %></span>
-    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
   <p class = "emphasis"><%=  MENU_NAME %></p>
   <%= f.search_field :menu_cont %>
   
@@ -88,11 +58,10 @@
     <i class="material-icons left">clear</i><%= CLEAR %>
   </button>
 <% end %>
-
 <div class="row">
 <ul class="workouts">
   <%= render @searchResults %>
-  <%if @searchResults.empty? %> <!--検索結果0件-->
+  <%if @searchResults.empty? %> <!--結果0件-->
     <li><%= SEARCH_EMPTY %></li>
   <%end%>
 </ul>

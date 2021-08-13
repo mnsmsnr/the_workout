@@ -1,13 +1,15 @@
+<% content_for(:html_title) { USER_NEW_TITLE } %>
+<br>
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 <%= simple_form_for @user do |f| %>
   <p class = "emphasis"><%= NAME %></p>
-    <%= f.input :name ,placeholder: "UserName" ,label:false %>
+    <%= f.input :name ,placeholder: NAME_PH ,label:false %>
   <p class = "emphasis"><%= EMAIL %></p>
-    <%= f.input :email ,placeholder: "mail-address@sample.jp" ,label:false %>
+    <%= f.input :email ,placeholder: EMAIL_PH ,label:false %>
   <p class = "emphasis"><%= PASSWORD %></p>
-    <%= f.input :password ,placeholder: "password2021" ,label:false %>
+    <%= f.input :password ,placeholder: PASSWORD_PH ,label:false %>
   <p class = "emphasis"><%= PASSWORD_CONFIRMATION %></p>
-    <%= f.input :password_confirmation ,placeholder: "password2021" ,label:false %>
+    <%= f.input :password_confirmation ,placeholder: PASSWORD_PH ,label:false %>
   <%= f.button :submit , SIGN_UP ,:class =>'black' %>
 <% end %>

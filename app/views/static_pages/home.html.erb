@@ -1,3 +1,4 @@
+<% content_for(:html_title) { HOME_TITLE } %>
 <%if logged_in?%> <!--ログイン状態-->
 <div class= 'top_picture'>
     <div class="container">
@@ -32,7 +33,7 @@
         <div class = "button_center">
             <%= link_to sighup_path, class: 'waves-effect waves-light btn-large harf-transparent' do %>
                 <i class="material-icons left">open_in_new</i>
-                <span>登録して始める！</span>
+                <span><%= LETS_SIGN_UP %></span>
             <% end %>
         </div>
     </div>

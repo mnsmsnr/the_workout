@@ -1,3 +1,4 @@
+<% content_for(:html_title) { @workout.menu } %>
 <br>
 <%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light black" do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
@@ -6,87 +7,52 @@
 <%= simple_form_for @workout do |f| %>
     <%= f.hidden_field :id %>
     <p class = "emphasis"><%=  MENU_NAME %></p>
-        <%= f.input :menu ,placeholder: "ダンベル ショルダープレス " ,label:false %>
+        <%= f.input :menu ,placeholder: MENU_NAME_PH ,label:false %>
     <p class = "emphasis"><%= PURPOSE %></p>
-    <p>
-        <label>
-        <%= f.radio_button :purpose, '' %>
-        <span><%= ALL %></span>
-        </label>
-        <br>
-        <label>
-        <%= f.radio_button :purpose, '1' %>
-        <span><%= PURPOSE_1 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :purpose, '2' %>
-        <span><%= PURPOSE_2 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :purpose, '3' %>
-        <span><%= PURPOSE_3 %></span>
-        </label>
-    </p>
-    <p class = "emphasis"><%= ENVIRONMENT %></p>
-    <p>
-        <label>
-        <%= f.radio_button :environment, '', checked: true %>
-        <span><%= ALL %></span>
-        </label>
-        <br>
-        <label>
-        <%= f.radio_button :environment, '1' %>
-        <span><%= ENVIRONMENT_1 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :environment, '2' %>
-        <span><%= ENVIRONMENT_2 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :environment, '3' %>
-        <span><%= ENVIRONMENT_3 %></span>
-        </label>
-    </p>
-    <p class = "emphasis"><%= TARGET %></p>
-    <p>
-        <label>
-        <%= f.radio_button :target, '', checked: true %>
-        <span><%= ALL %></span>
-        </label>
-        <br>
-        <label>
-        <%= f.radio_button :target, '1' %>
-        <span><%= TARGET_1 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '2' %>
-        <span><%= TARGET_2 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '3' %>
-        <span><%= TARGET_3 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '4' %>
-        <span><%= TARGET_4 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '5' %>
-        <span><%= TARGET_5 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '6' %>
-        <span><%= TARGET_6 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '7' %>
-        <span><%= TARGET_7 %></span>
-        </label>
-        <label>
-        <%= f.radio_button :target, '8' %>
-        <span><%= TARGET_8 %></span>
-        </label>
-    </p>
+  <% purposes = [ALL,PURPOSE_1,PURPOSE_2,PURPOSE_3] %>
+  <% for i in [*0..3] %>
+    <label>
+        <% if i == 0 %>
+          <%= f.radio_button :purpose, '' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :purpose, i.to_s %>
+        <% end %>
+        <span><%= purposes[i] %></span>
+    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
+  <p class = "emphasis"><%= ENVIRONMENT %></p>
+  <% environments = [ALL,ENVIRONMENT_1,ENVIRONMENT_2,ENVIRONMENT_3] %>
+  <% for i in [*0..3] %>
+    <label >
+        <% if i == 0 %>
+          <%= f.radio_button :environment, '' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :environment, i.to_s %>
+        <% end %>
+        <span><%= environments[i] %></span>
+    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
+  <p class = "emphasis"><%= TARGET %></p>
+  <% targets = [ALL,TARGET_1,TARGET_2,TARGET_3,TARGET_4,TARGET_5,TARGET_6,TARGET_7,TARGET_8] %>
+  <% for i in [*0..8] %>
+    <label>
+        <% if i == 0 %>
+          <%= f.radio_button :target, '' %>
+        <% elsif i != 0 %>
+          <%= f.radio_button :target, i.to_s %>
+        <% end %>
+        <span><%= targets[i] %></span>
+    </label>
+    <% if i == 0 %>
+      <br>
+    <% end%>
+  <% end%>
     <p class = "emphasis"><%= PICTURE %></p>
         <% if @workout.image.attached? %>
             <%= image_tag @workout.image.variant(resize:'400x400').processed %>
@@ -101,7 +67,7 @@
         <% else%>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% end%>
-        <%= f.text_field :video_id %>
+        <%= f.text_field :video_id ,placeholder: YOUTUBE_PH %>
     <button type="submit" class="waves-effect waves-light btn black">
         <i class="material-icons left">update</i><%= UPDATE %>
     </button>

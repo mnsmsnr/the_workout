@@ -4,6 +4,18 @@ module Constants
     # 
 end
 
+#画面タイトル
+HOME_TITLE = 'THE WORKOUT'
+INDEX_TITLE = 'トレーニング検索・一覧'
+WORK_NEW_TITLE = 'トレーニング登録'
+USER_NEW_TITLE = 'ユーザー登録'
+LOGIN_TITLE = 'ログイン'
+    #トレーニング詳細・編集は各メニュー名
+    #ユーザ詳細・編集は各ユーザ名
+
+#HOME画面
+LETS_SIGN_UP = '登録して始める！'
+
 #USER関連
 LOGIN = 'LOGIN'
 SIGN_UP = 'SIGN_UP'
@@ -51,7 +63,18 @@ DELETE = 'DELETE'
 EDIT = 'EDIT' #USER共通
 UPDATE = 'UPDATE'
 
-#エラー
+#フォームプレースホルダー
+MENU_NAME_PH = 'ベンチプレス'
+YOUTUBE_PH = 'https://www.youtube.com/watch?v=_Rbmhns0CxU'
+NAME_PH = 'UserName'
+EMAIL_PH = 'mail-address@sample.jp'
+PASSWORD_PH = 'password2021'
+
+#エラー・警告メッセージ
 SEARCH_EMPTY = '検索結果がありません。条件を変えて再検索してください。'
 LOGIN_AUTHENTICATION = 'ユーザー名もしくはパスワードが無効です '
 PASSWORD_UPDATE_AUTHENTICATION = '現在のパスワードが無効です'
+DELETE_CONFIRM = '削除しますか?'
+DELETE_CONFIRM_TITLE = '削除確認'
+DELETE_CONFIRM_Y = '削除'
+DELETE_CONFIRM_N = 'キャンセル'

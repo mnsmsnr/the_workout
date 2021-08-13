@@ -1,3 +1,4 @@
+<% content_for(:html_title) { @workout.menu } %>
 <br>
 <%= link_to workout_index_url ,class: "btn-small harf-transparent waves-effect waves-light " do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
@@ -8,12 +9,12 @@
 </p>
 <%= form_with model: @workout ,local: true do |f| %>
     <% if @workout.user_id == current_user.id%>
-        <%= link_to  workout_url(@workout.id), method: :delete ,class: "waves-effect waves-light btn",data:
-                { confirm: '削除しますか?',
-                cancel: 'キャンセル',commit: '削除'}, title: '削除確認' do %>
+        <%= link_to  workout_url(@workout.id), method: :delete ,class: "waves-effect waves-light btn black",data:
+                { confirm: DELETE_CONFIRM,
+                cancel: DELETE_CONFIRM_N, commit: DELETE_CONFIRM_Y }, title: DELETE_CONFIRM_TITLE do %>
             <i class="material-icons left">delete</i> <%= DELETE %>
         <% end %>
-        <%= link_to  @workout, method: :post ,class: "waves-effect waves-light btn" do %>
+        <%= link_to  @workout, method: :post ,class: "waves-effect waves-light btn black" do %>
             <i class="material-icons left">edit</i> <%= EDIT %>
         <% end %>
     <% end %>
