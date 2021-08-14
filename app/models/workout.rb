@@ -13,7 +13,7 @@ class Workout < ApplicationRecord
                 #拡張子エラー
                 if !image.blob.content_type.in?(%('image/jpeg image/png'))
                     image.purge
-                    errors.add(PICTURE, 'はjpegまたはpng形式でアップロードしてください')
+                    errors.add(PICTURE, IMAGE_FORMAT )
                 else
                 #強制リサイズ
                     image.variant(resize_to_fill: [400, 400])
