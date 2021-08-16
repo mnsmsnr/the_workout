@@ -1,6 +1,6 @@
 <% content_for(:html_title) { @user.name } %>
 <br>
-<%= link_to 'javascript:history.back()' ,class: "btn-small harf-transparent waves-effect waves-light black " do %>
+<%= link_to profile_url ,class: "btn-small harf-transparent waves-effect waves-light black " do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
 <% end %>
 <h1>User edit</h1>

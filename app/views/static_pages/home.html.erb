@@ -1,31 +1,31 @@
 <% content_for(:html_title) { HOME_TITLE } %>
 <%if logged_in?%> <!--ログイン状態-->
-<div class= 'top_picture'>
-    <div class="container">
-        <div class="row">
-            <div class="col s6">
-                <div class="card">
-                    <div class="card-image">
-                        <%= link_to image_tag('search.jpg', class: 'top-menu'), workout_index_url %>
-                    </div>
-                    <div class="card-action black">
-                        <%= link_to TRANING_SEARCH, workout_index_url ,class: 'white-text' %>
+    <div class= 'top_picture'>
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <div class="card">
+                        <div class="card-image">
+                            <%= link_to image_tag('search.jpg', class: 'top-menu'), workout_index_url %>
+                        </div>
+                        <div class="card-action black">
+                            <%= link_to TRANING_SEARCH, workout_index_url ,class: 'white-text' %>
+                        </div>
                     </div>
                 </div>
+                <div class="col s6">
+                    <div class="card">
+                        <div class="card-image">
+                            <%= link_to image_tag('add.jpg', class: 'top-menu'), workout_new_url %>
+                        </div>
+                        <div class="card-action black">
+                            <%= link_to TRANING_ADD, workout_new_url ,class: 'white-text'%>
+                        </div>
+                    </div>
+                </div> 
             </div>
-            <div class="col s6">
-                <div class="card">
-                    <div class="card-image">
-                        <%= link_to image_tag('add.jpg', class: 'top-menu'), workout_new_url %>
-                    </div>
-                    <div class="card-action black">
-                        <%= link_to TRANING_ADD, workout_new_url ,class: 'white-text'%>
-                    </div>
-                </div>
-            </div> 
         </div>
-    </div>
-<div>
+    <div>
 <%else%><!--ログアウト状態-->
     <div class = "top_video">
         <!--【TODO!】仮TOP動画-->

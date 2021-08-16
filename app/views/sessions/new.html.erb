@@ -1,7 +1,5 @@
 <% content_for(:html_title) { LOGIN_TITLE } %>
-<% provide(:title, 'login') %> 
 <h1>Log in</h1>
-
 <!--テストログイン用-->
 <div class="balloon5">
   <div class="faceicon">
@@ -44,7 +42,6 @@ function copyToClipboard() {
 var copyArea = document.getElementById("copyID");
 copyArea.select();
 document.execCommand("Copy");
-document.getSelection().empty(copyArea);
 }
 </script>
 <script>

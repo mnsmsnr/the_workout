@@ -1,3 +1,8 @@
+// ラジオボタン色
+// #26a69a teal lighten-1
+// ボタン・ラベル・ヘッダー色
+// #37474f blue-grey darken-3
+
 .top_video{
   height: 80vh;
   z-index: 1;
@@ -17,7 +22,7 @@
 }
 
 .harf-transparent{
-  background: rgba(0, 0, 0, 0.7);
+  background:rgba(55, 71, 79,0.7); 
 }
 
 .float-left{
@@ -25,18 +30,18 @@
 }
 
 .header_bg{
-  background: rgba(0, 0, 0, 1);
+  background: rgb(55, 71, 79);
 }
 
 .card_title_bg{
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(55, 71, 79,0.4); 
 }
 
 //ラベル
 .emphasis {
   font-weight: 700;
   color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
+  background: rgb(55, 71, 79); 
 }
 
 .trim{
@@ -127,11 +132,14 @@
   object-fit: cover;
 }
 
+//home背景
 .top_picture{
-  //擬似的に透過画像風に
   background-image: url('top.jpg');
+  background-size: cover;
+  //擬似的に透過画像風に
   background-color:rgba(255,255,255,0.3);
   background-blend-mode:lighten;
   width: 100%;
+  height: 100vh;
 }
 

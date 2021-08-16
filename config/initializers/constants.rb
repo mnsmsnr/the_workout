@@ -13,6 +13,18 @@ LOGIN_TITLE = 'ログイン'
     #トレーニング詳細・編集は各メニュー名
     #ユーザ詳細・編集は各ユーザ名
 
+#TOPメニュー
+TRANING_ADD = 'Traning Add'
+TRANING_SEARCH = 'Traning search'
+
+#ヘッダーメニュー
+PROFILE_H = 'プロフィール'
+LOGOUT_H = 'ログアウト'
+WOURKOUT_SEARCH_H = 'ワークアウト検索'
+WOURKOUT_NEW_H = 'ワークアウト登録'
+USER_NEW_H = '新規登録'
+LOGIN_H = 'ログイン'
+
 #HOME画面
 LETS_SIGN_UP = '登録して始める！'
 
@@ -28,10 +40,6 @@ NEW_PASSWORD = 'NEW_PASSWORD'
 NEW_PASSWORD_CONFIRMATION = 'NEW_PASSWORD_CONFIRMATION'
 HIDDEN = '********'
 COMPLETED = 'Update completed!' #ワーク更新共通
-
-#TOPメニュー
-TRANING_ADD = 'Traning Add'
-TRANING_SEARCH = 'Traning search'
 
 #WORK関連
 ALL = '選択しない'
@@ -59,8 +67,6 @@ CREATE = 'CREATE'
 SEARCH = 'SEARCH'
 CLEAR = 'CLEAR'
 BACK = 'BACK'
-DELETE = 'DELETE'
-EDIT = 'EDIT' #USER共通
 UPDATE = 'UPDATE'
 
 #フォームプレースホルダー
@@ -79,3 +85,7 @@ DELETE_CONFIRM = '削除しますか?'
 DELETE_CONFIRM_TITLE = '削除確認'
 DELETE_CONFIRM_Y = '削除'
 DELETE_CONFIRM_N = 'キャンセル'
+LOGOUT_CONFIRM = 'ログアウトしますか?'
+LOGOUT_CONFIRM_TITLE = 'ログアウト確認'
+LOGOUT_CONFIRM_Y = 'ログアウト'
+LOGOUT_CONFIRM_N = 'キャンセル'

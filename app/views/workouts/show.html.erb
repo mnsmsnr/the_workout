@@ -1,6 +1,6 @@
 <% content_for(:html_title) { @workout.menu } %>
 <br>
-<%= link_to workout_index_url ,class: "btn-small harf-transparent waves-effect waves-light " do %>
+<%= link_to workout_index_url ,class: "btn-small harf-transparent waves-effect waves-light black" do %>
     <span style="font-size:10px"><i class="material-icons left">arrow_back</i><%= BACK %></span>
 <% end %>
 <h1>Training show</h1>
@@ -9,13 +9,13 @@
 </p>
 <%= form_with model: @workout ,local: true do |f| %>
     <% if @workout.user_id == current_user.id%>
-        <%= link_to  workout_url(@workout.id), method: :delete ,class: "waves-effect waves-light btn black",data:
+        <%= link_to  workout_url(@workout.id), method: :delete ,class: "btn-floating waves-effect waves-light btn black",data:
                 { confirm: DELETE_CONFIRM,
                 cancel: DELETE_CONFIRM_N, commit: DELETE_CONFIRM_Y }, title: DELETE_CONFIRM_TITLE do %>
-            <i class="material-icons left">delete</i> <%= DELETE %>
+            <i class="material-icons left">delete</i>
         <% end %>
-        <%= link_to  @workout, method: :post ,class: "waves-effect waves-light btn black" do %>
-            <i class="material-icons left">edit</i> <%= EDIT %>
+        <%= link_to  @workout, method: :post ,class: "btn-floating waves-effect waves-light btn black" do %>
+            <i class="material-icons left">edit</i>
         <% end %>
     <% end %>
 

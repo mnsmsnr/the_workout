@@ -14,8 +14,12 @@
  *= require_self
  *= require_tree .
  */
-// materializecssをインポートする
+// materializecss
 @import "materialize";
+
+*{
+    font-family: 'Noto Sans JP', sans-serif;
+  }
 
 .check_box {
     -webkit-appearance: none;
