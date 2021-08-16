@@ -2,8 +2,8 @@
     <div class="nav-wrapper header_bg">
         <a href= <%=root_path %> class="brand-logo right">THE WORKOUT</a>
         <ul>
-        <!--レスポンシブ　<ul id="nav-mobile" class="left hide-on-med-and-down">-->
-            <%if logged_in?%> <!--ログイン状態-->
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <%if logged_in?%>
                 <li><%= link_to PROFILE_H, profile_url %></li>
                 <li><%= link_to LOGOUT_H, logout_url, method: :delete ,data:
                         { confirm: LOGOUT_CONFIRM,
@@ -11,11 +11,26 @@
                     commit: LOGOUT_CONFIRM_N}, title: LOGOUT_CONFIRM_TITLE %></li>
                 <li><%= link_to WOURKOUT_SEARCH_H, workout_index_url  %></li>
                 <li><%= link_to WOURKOUT_NEW_H, workout_new_url %></li>
-            <%else%><!--ログアウト状態-->
+            <%else%>
                 <li><%= link_to USER_NEW_H, sighup_url %></li>
                 <li><%= link_to LOGIN_H, login_url %></li>
             <%end%>
         </ul>
-        <!--【TODO】レスポンシブル対応-->
+        <ul id="nav-mobile" class="left hide-on-large-only">
+            <%if logged_in?%>
+                <li><%= link_to profile_url do %><i class="material-icons">account_circle</i><% end %></li>
+                <li><%= link_to logout_url, method: :delete ,data:
+                        { confirm: LOGOUT_CONFIRM,
+                    cancel: LOGOUT_CONFIRM_Y,
+                    commit: LOGOUT_CONFIRM_N}, title: LOGOUT_CONFIRM_TITLE do %>
+                    <i class="fas fa-sign-out-alt height-Adjust"></i><% end %>
+                    </li>
+                <li><%= link_to workout_index_url do %><i class="material-icons">search</i><% end %></li>
+                <li><%= link_to workout_new_url do %><i class="material-icons">add_circle</i><% end %></li>
+            <%else%>
+                <li><%= link_to sighup_url do %><i class="fas fa-user-plus height-Adjust"></i><% end %></li>
+                <li><%= link_to login_url do %><i class="fas fa-sign-in-alt height-Adjust"></i><% end %></li>
+            <%end%>
+        </ul>
     </div>
 </nav>

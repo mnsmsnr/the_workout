@@ -20,10 +20,11 @@ TRANING_SEARCH = 'Traning search'
 #ヘッダーメニュー
 PROFILE_H = 'プロフィール'
 LOGOUT_H = 'ログアウト'
-WOURKOUT_SEARCH_H = 'ワークアウト検索'
-WOURKOUT_NEW_H = 'ワークアウト登録'
+WOURKOUT_SEARCH_H = 'トレーニング検索'
+WOURKOUT_NEW_H = 'トレーニング登録'
 USER_NEW_H = '新規登録'
 LOGIN_H = 'ログイン'
+MENU_H = 'メニュー'
 
 #HOME画面
 LETS_SIGN_UP = '登録して始める！'
