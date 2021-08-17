@@ -1,81 +1,51 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '5.2.0'
+gem 'rails','5.2.0'
 
-#デザイン関連
+#デザイン・レイアウト
 gem 'materialize-sass', '~> 1.0.0'
 gem 'jquery-rails'
 gem 'material_icons' 
-gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'simple_form'
-# gem 'turbolinks', '~> 5'
+
+#ページネーション
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 #検索機能
 gem 'ransack'
 
 #DB関連
-# gem 'sqlite3', '~> 1.3.6'
 gem 'mysql2'
 gem 'dotenv-rails'
 
-#サンプルデータ関連
-gem 'faker',          '1.7.3'
-
-#ページネーション関連
-gem 'will_paginate',           '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
-
-#has_secure_password関連(ハッシュ化)
-gem 'bcrypt',         '3.1.12'
+#セキュリティ
+gem 'bcrypt', '3.1.12'
 
 # ActiveStorage variant関連
 gem 'mini_magick', '~> 4.8'
 
-# Vue.js関連
-gem "webpacker"
-
 # app server
 gem 'unicorn'
 
-
-# gem 'carrierwave',             '1.2.2'
-# gem 'mini_magick',             '4.7.0'
-# gem 'will_paginate',           '3.1.6'
-# gem 'bootstrap-will_paginate', '1.0.0'
-# gem 'bootstrap-sass', '3.3.7'
-# gem 'puma',         '3.9.1'
-# gem 'sass-rails',   '5.0.6'
-# gem 'uglifier',     '3.2.0'
-# gem 'coffee-rails', '4.2.2'
-# gem 'jquery-rails', '4.3.1'
-# gem 'turbolinks',   '5.0.1'
-# gem 'jbuilder',     '2.7.0'
-
-group :development, :test do
-#   gem 'byebug',  '9.0.6', platform: :mri
-end
-
 group :development do
-
-#デバッグ関連
-gem 'ruby-debug-ide', require: false
-gem 'debase'
-#   gem 'web-console',           '3.5.1'
-  gem 'listen',                '3.1.5'
-#   gem 'spring',                '2.0.2'
-#   gem 'spring-watcher-listen', '2.0.1'
+  #デバッグ
+  gem 'ruby-debug-ide', require: false
+  gem 'debase'
+  #ファイル変更監視
+  gem 'listen','3.1.5'
 end
 
- group :test do
-#   gem 'rails-controller-testing', '1.0.2'
-#   gem 'minitest',                 '5.10.3'
-#   gem 'minitest-reporters',       '1.1.14'
-#   gem 'guard',                    '2.13.0'
-#   gem 'guard-minitest',           '2.4.4'
+group :test do
+  #テスト
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
-# group :production do
-#   gem 'pg', '0.20.0'
-#   gem 'fog', '1.42'
-# end
+group :production do
+
+end
+
