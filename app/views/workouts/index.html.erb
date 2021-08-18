@@ -4,8 +4,8 @@
 <h1>Training index</h1>
 <%= search_form_for @search do |f| %>
   <p class = "emphasis"><%= PURPOSE %></p>
-  <% purposes = [ALL,PURPOSE_1,PURPOSE_2,PURPOSE_3] %>
-  <% for i in [*0..3] %>
+  <% purposes = [ALL,PURPOSE_1,PURPOSE_2] %>
+  <% for i in [*0..2] %>
     <label>
         <% if i == 0 %>
           <%= f.radio_button :purpose_cont, '',:class =>'radiotest' %>

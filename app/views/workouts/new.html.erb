@@ -5,8 +5,8 @@
   <p class = "emphasis"><%= MENU_NAME %></p>
      <%= f.input :menu ,placeholder: MENU_NAME_PH ,label:false %>
   <p class = "emphasis"><%= PURPOSE %></p>
-  <% purposes = [ALL,PURPOSE_1,PURPOSE_2,PURPOSE_3] %>
-  <% for i in [*1..3] %>
+  <% purposes = [ALL,PURPOSE_1,PURPOSE_2] %>
+  <% for i in [*1..2] %>
     <label>
         <% if i == 1 %>
           <%= f.radio_button :purpose, i.to_s , checked: true %>
