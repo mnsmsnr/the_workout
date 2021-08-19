@@ -51,10 +51,9 @@
     <%= f.file_field :image %>
   <p class = "emphasis"><%= YOUTUBE %></p>
       <%= f.text_field :video_id ,placeholder: YOUTUBE_PH %>
+  <p class = "emphasis"><%= TIPS %></p>
+      <%= f.input :tips, placeholder: TIPS_PH, label:false, :input_html => {:id => "heightAdjust"} %>
   <button type="submit" class="waves-effect waves-light btn black">
     <i class="material-icons left">add</i><%= CREATE %>
-  </button>
-  <button onclick="clearForm()" class="waves-effect waves-light btn black">
-    <i class="material-icons left">clear</i><%= CLEAR %>
   </button>
 <% end %>

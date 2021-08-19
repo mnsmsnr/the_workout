@@ -80,6 +80,6 @@ class WorkoutsController < ApplicationController
     private
 
       def workout_params 
-        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image, :video_id)
+        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image, :video_id, :tips)
       end
 end

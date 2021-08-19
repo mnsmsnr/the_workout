@@ -9,7 +9,7 @@ HOME_TITLE = 'THE WORKOUT'
 INDEX_TITLE = 'TRANING SEARCH'
 WORK_NEW_TITLE = 'TRANING ADD'
 USER_NEW_TITLE = 'SIGH UP'
-LOGIN_TITLE = 'SIGH IN'
+LOGIN_TITLE = 'LOG IN'
     #トレーニング詳細・編集は各メニュー名
     #ユーザ詳細・編集は各ユーザ名
 
@@ -23,7 +23,7 @@ LOGOUT_H = 'LOG OUT'
 WOURKOUT_SEARCH_H = 'TRANING SEARCH'
 WOURKOUT_NEW_H = 'TRANING ADD'
 USER_NEW_H = 'SIGH UP'
-LOGIN_H = 'SIGH IN'
+LOGIN_H = 'LOG IN'
 MENU_H = 'MENU'
 
 #HOME画面
@@ -63,6 +63,7 @@ TARGET = 'TARGET'
 MENU_NAME = 'MENU'
 PICTURE = 'IMAGE'
 YOUTUBE = 'YOUTUBE'
+TIPS = 'TIPS'
 CREATE = 'CREATE'
 SEARCH = 'SEARCH'
 CLEAR = 'CLEAR'
@@ -71,10 +72,11 @@ UPDATE = 'UPDATE'
 
 #フォームプレースホルダー
 MENU_NAME_PH = 'ベンチプレス'
-YOUTUBE_PH = 'https://www.youtube.com/watch?v=_Rbmhns0CxU'
+YOUTUBE_PH = 'https://www.youtube.com/watch?v=_Rbmhns0CxU  or  _Rbmhns0CxU'
 NAME_PH = 'UserName'
 EMAIL_PH = 'mail-address@sample.jp'
 PASSWORD_PH = 'password2021'
+TIPS_PH = '・肩甲骨を寄せて下げることでブリッジを作る'
 
 #エラー・警告メッセージ
 SEARCH_EMPTY = '検索結果がありません。条件を変えて再検索してください。'

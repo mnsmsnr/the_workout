@@ -68,6 +68,8 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% end%>
         <%= f.text_field :video_id ,placeholder: YOUTUBE_PH %>
+    <p class = "emphasis"><%=  TIPS %></p>
+        <%= f.input :tips ,placeholder: TIPS_PH ,label:false, :input_html => {:id => "heightAdjust"} %>
     <button type="submit" class="waves-effect waves-light btn black">
         <i class="material-icons left">update</i><%= UPDATE %>
     </button>

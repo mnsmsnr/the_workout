@@ -15,3 +15,12 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    var $heightAdjust = $('#heightAdjust');
+    var lineHeight = parseInt($heightAdjust.css('lineHeight'));
+    $heightAdjust.on('input', function(e) {
+      var lines = ($(this).val() + '\n').match(/\n/g).length;
+      $(this).height(lineHeight * lines);
+    });
+  });

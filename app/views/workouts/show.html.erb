@@ -39,5 +39,7 @@
         <% else%>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @workout.video_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <% end%>
+    <p class = "emphasis"><%= TIPS %></p>
+        <div class='tips'><%= simple_format(@workout.tips) %></div>
 <% end %>
 
