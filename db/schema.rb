@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_063642) do
+ActiveRecord::Schema.define(version: 2021_08_21_061349) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 2021_08_18_063642) do
     t.string "name"
   end
 
-  create_table "purposes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "targets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "targets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "units", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
   end
 
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_063642) do
   create_table "workouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.string "menu"
-    t.string "purpose"
+    t.string "unit"
     t.string "environment"
     t.string "target"
     t.string "video_id"

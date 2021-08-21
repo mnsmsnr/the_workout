@@ -44,9 +44,9 @@ COMPLETED = 'Update completed!' #ワーク更新共通
 
 #WORK関連
 ALL = 'ALL'
-PURPOSE = 'MENU'
-    PURPOSE_1 = 'Unit'
-    PURPOSE_2 = 'Set'
+UNIT = 'UNIT'
+    UNIT_1 = 'Single'
+    UNIT_2 = 'Multiple'
 ENVIRONMENT = 'ENV'
     ENVIRONMENT_1 = 'Gym'
     ENVIRONMENT_2 = 'Item'

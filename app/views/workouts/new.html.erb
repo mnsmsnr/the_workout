@@ -4,16 +4,16 @@
 <%= simple_form_for @workout do |f| %>
   <p class = "emphasis"><%= MENU_NAME %></p>
      <%= f.input :menu ,placeholder: MENU_NAME_PH ,label:false %>
-  <p class = "emphasis"><%= PURPOSE %></p>
-  <% purposes = [ALL,PURPOSE_1,PURPOSE_2] %>
+  <p class = "emphasis"><%= UNIT %></p>
+  <% units = [ALL,UNIT_1,UNIT_2] %>
   <% for i in [*1..2] %>
     <label>
         <% if i == 1 %>
-          <%= f.radio_button :purpose, i.to_s , checked: true %>
+          <%= f.radio_button :unit, i.to_s , checked: true %>
         <% elsif i != 1 %>
-          <%= f.radio_button :purpose, i.to_s %>
+          <%= f.radio_button :unit, i.to_s %>
         <% end %>
-        <span><%= purposes[i] %></span>
+        <span><%= units[i] %></span>
     </label>
   <% end%>
   <p class = "emphasis"><%= ENVIRONMENT %></p>

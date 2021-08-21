@@ -24,7 +24,7 @@ class WorkoutsController < ApplicationController
   def show #トレーニング詳細画面遷移
     logger.debug("log:トレーニング詳細画面遷移")
     @workout = Workout.find_by(id: params[:format])
-    @purpose = Purpose.find_by(id: @workout.purpose)
+    @unit = Unit.find_by(id: @workout.unit)
     @environment = Environment.find_by(id: @workout.environment)
     @target = Target.find_by(id: @workout.target)
     # 検索画面遷移時の条件保持フラグ
@@ -80,6 +80,6 @@ class WorkoutsController < ApplicationController
     private
 
       def workout_params 
-        params.require(:workout).permit(:menu, :purpose, :environment, :target, :image, :video_id, :tips)
+        params.require(:workout).permit(:menu, :unit, :environment, :target, :image, :video_id, :tips)
       end
 end

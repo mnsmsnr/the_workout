@@ -45,11 +45,11 @@ User.create!(name:  "TestUser",
 Workout.create!(id: "1",
     user_id: "0",
     menu: "ベンチプレス",
-    content: "",
-    purpose: "1",
+    unit: "1",
     environment: "1",
     target: "1",
     video_id: "hB-kaLANF2A",
+    tips:"テスト１"
 )
 work = Workout.find(1)
 work.image.attach(io: File.open('app/assets/images/bench-press.jpg'), filename: 'bench-press.jpg')
@@ -57,11 +57,12 @@ work.image.attach(io: File.open('app/assets/images/bench-press.jpg'), filename: 
 Workout.create!(id: "2",
     user_id: "0",
     menu: "プッシュアップ",
-    content: "",
-    purpose: "1",
+    unit: "1",
     environment: "3",
     target: "1",
     video_id: "VzUaVBXGVeQ",
+    tips:"テスト２"
+
 )
 work = Workout.find(2)
 work.image.attach(io: File.open('app/assets/images/push-up.jpg'), filename: 'push-up.jpg')
@@ -69,11 +70,11 @@ work.image.attach(io: File.open('app/assets/images/push-up.jpg'), filename: 'pus
 Workout.create!(id: "3",
     user_id: "0",
     menu: "チンニング",
-    content: "",
-    purpose: "1",
+    unit: "1",
     environment: "3",
     target: "2",
     video_id: "hj2j-RsUiSE",
+    tips:"テスト３"
 )
 work = Workout.find(3)
 work.image.attach(io: File.open('app/assets/images/thining.jpg'), filename: 'thining.jpg')
@@ -81,19 +82,19 @@ work.image.attach(io: File.open('app/assets/images/thining.jpg'), filename: 'thi
 Workout.create!(id: "4",
     user_id: "0",
     menu: "デッドリフト",
-    content: "",
-    purpose: "1",
+    unit: "1",
     environment: "1",
     target: "2",
     video_id: "YXvcaAAToKo",
+    tips:"テスト４"
 )
 work = Workout.find(4)
 work.image.attach(io: File.open('app/assets/images/dead-lift.jpg'), filename: 'dead-lift.jpg')
 
 
 #マスタ
-Purpose.create!(id:1, name: PURPOSE_1 ) 
-Purpose.create(id: 2, name: PURPOSE_2 ) 
+Unit.create(id: 1, name: UNIT_1 ) 
+Unit.create(id: 2, name: UNIT_2 ) 
 Environment.create(id: 1, name: ENVIRONMENT_1 ) 
 Environment.create(id: 2, name: ENVIRONMENT_2 ) 
 Environment.create(id: 3, name: ENVIRONMENT_3 ) 
